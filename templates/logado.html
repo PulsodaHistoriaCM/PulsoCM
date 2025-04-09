@@ -12,6 +12,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 
+    <!--SWIPER JS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
     <title>Pulso da História CM</title>
 </head>
 
@@ -176,7 +179,7 @@
             <img src="/static/img/poeta Juvenal Antunes.jpg" alt="Juvenal Antunes">
             <div class="texto">
                 <h2>Juvenal  Antunes de Oliveira</h2>
-                <p>Poeta consagrado no Acre e esquecido por sua cidade, <br> conheça o boêmio e sarcástico Juvenal Antunes.</p>
+                <p>Poeta consagrado no Acre e esquecido por sua cidade, conheça o boêmio <br> e sarcástico Juvenal Antunes.</p>
                 <a href="/templates/artigosP/art7.html">Leia mais aqui >></a>
             </div>
         </section>
@@ -188,13 +191,102 @@
             <a href="/templates/rotas.html"><button>Veja mais Aqui</button></a>
         </section>
 
-        <section class="chat"></section> <!--Falta aqui-->
+        <section class="chat">
+            <h2 id="title">Chat ao Vivo</h2>
 
-        <section class="saude"> <!--fazer ajustes-->
-            <img src="/static/img/grafico.png" alt="Gráfico bpm">
-            <div class="texto">
-                <h2>Acompanhe o uso do<br>protótipo aqui</h2>
-                <p>Na aba saúde você tem acesso ao gráfico de <br> seus batimentos  cardíacos durante o uso do <br> protótipo. Quaisquer anormalidades podem ser <br> vistas no relatório disponibilizado.</p>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="rate">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        
+                        <blockquote class="testimonial">
+                            "Experiência incrível! A cidade é muito bonita, amei as praias!"
+                        </blockquote>
+            
+                        <div class="user">
+                            <h3>Maria da Silva</h3>
+                            <p>23/04/2024</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="rate">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <blockquote class="testimonial">
+                            "Experiência incrível! A cidade é muito bonita, amei as praias!"
+                        </blockquote>
+
+                        <div class="user">
+                            <h3>Maria da Silva</h3>
+                            <p>23/04/2024</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="rate">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <blockquote class="testimonial">
+                            "Experiência incrível! A cidade é muito bonita, amei as praias!"
+                        </blockquote>
+
+                        <div class="user">
+                            <h3>Maria da Silva</h3>
+                            <p>23/04/2024</p>
+                        </div>
+                    </div>
+
+                    <!--fazer user acessar a pagina rota aqui-->
+                    <div class="swiper-slide">
+                        <div class="rate">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <blockquote class="testimonial">
+                            "Experiência incrível! A cidade é muito bonita, amei as praias!"
+                        </blockquote>
+
+                        <div class="user">
+                            <h3>Maria da Silva</h3>
+                            <p>23/04/2024</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-pagination"></div>
+        
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+
+        </section> 
+
+        <section class="saude"> 
+            <img id="grafico" src="/static/img/grafico.png" alt="Gráfico bpm">
+            <div class="texto texto2">
+                <h2 id="Th2">Acompanhe o uso do protótipo aqui</h2>
+                <p id="Tp">Na aba saúde você tem acesso ao gráfico de seus batimentos  cardíacos durante o uso do protótipo. Quaisquer anormalidades podem ser vistas no relatório disponibilizado.</p>
                 <a href="/templates/saude.html"><button>Ver meu Relatório</button></a>
             </div>
         </section>
@@ -259,5 +351,9 @@
     <script src="/static/javascript/slider.js"></script>
     <script src="/static/javascript/scroll.js"></script>
     <script src="/static/javascript/voltar.js"></script>
+    
+    <!--do chat-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> 
+    <script src="/static/javascript/chat.js"></script>
 </body>
 </html>
