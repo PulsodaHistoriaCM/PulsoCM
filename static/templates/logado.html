@@ -12,10 +12,27 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 
-    <!--SWIPER JS-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-
     <title>Pulso da História CM</title>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const hearts = document.querySelectorAll(".heart-icon");
+
+            hearts.forEach(heart => {
+                heart.addEventListener("click", () => {
+                    heart.classList.toggle("fa-regular");
+                    heart.classList.toggle("fa-solid");
+
+                    // Troca cor
+                    if (heart.classList.contains("fa-solid")) {
+                        heart.style.color = "red";
+                    } else {
+                        heart.style.color = "black";
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -194,69 +211,51 @@
         <section class="chat">
             <h2 id="title">Chat ao Vivo</h2>
 
-            <div class="swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="rate">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
+            <div class="destaques">
+                <div class="destaque">
+                    <i class="fa-regular fa-heart heart-icon"></i>                    
                         
-                        <blockquote class="testimonial">
-                            "Experiência incrível! A cidade é muito bonita, amei as praias!"
-                        </blockquote>
+                    <blockquote class="testimonial">
+                        "Experiência incrível! A cidade é muito bonita, amei as praias!"
+                    </blockquote>
             
-                        <div class="user">
-                            <h3>Maria da Silva</h3>
-                            <p>23/04/2024</p>
-                        </div>
+                    <div class="user">
+                        <h3>Maria da Silva</h3>
+                        <p>23/04/2024</p>
                     </div>
 
-                    <div class="swiper-slide">
-                        <div class="rate">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
+                    <a href="/PulsoCM/static/templates/chat.html">Acesse o chat e participe! >></a>
+                </div>
 
-                        <blockquote class="testimonial">
-                            "Experiência incrível! A cidade é muito bonita, amei as praias!"
-                        </blockquote>
-
-                        <div class="user">
-                            <h3>Maria da Silva</h3>
-                            <p>23/04/2024</p>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="rate">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-
-                        <blockquote class="testimonial">
-                            "Experiência incrível! A cidade é muito bonita, amei as praias!"
-                        </blockquote>
-
-                        <div class="user">
-                            <h3>Maria da Silva</h3>
-                            <p>23/04/2024</p>
-                        </div>
-                    </div>
-
-                <div class="swiper-pagination"></div>
+                <div class="destaque">
+                    <i class="fa-regular fa-heart heart-icon"></i>                   
+                        
+                    <blockquote class="testimonial">
+                        "Experiência incrível! A cidade é muito bonita, amei as praias!"
+                    </blockquote>
         
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                    <div class="user">
+                        <h3>Maria da Silva</h3>
+                        <p>23/04/2024</p>
+                    </div>
+
+                    <a href="/PulsoCM/static/templates/chat.html">Acesse o chat e participe! >></a>
+                </div>
+
+                <div class="destaque">
+                    <i class="fa-regular fa-heart heart-icon"></i>                    
+                        
+                    <blockquote class="testimonial">
+                        "Experiência incrível! A cidade é muito bonita, amei as praias!"
+                    </blockquote>
+            
+                    <div class="user">
+                        <h3>Maria da Silva</h3>
+                        <p>23/04/2024</p>
+                    </div>
+
+                    <a href="/PulsoCM/static/templates/chat.html">Acesse o chat e participe! >></a>
+                </div>
             </div>
 
         </section> 
