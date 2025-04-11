@@ -1,201 +1,303 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/PulsoCM/static/img/logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="/PulsoCM/static/style.css">
-    <link rel="stylesheet" href="/PulsoCM/static/secao.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!--biblioteca Chart.js-->
-    
-    <title>Saúde</title>
-
+    <title>Gráfico de Frequência Cardíaca</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        main{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #e0f7fa, #f1f8e9);
+            text-align: center;
         }
 
-        #chartContainer{
-            width: 90%;
-            margin: 50px auto;
-            background-color: #fff;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        h1 {
+            font-size: 28px;
+            margin-top: 20px;
         }
+
+        #heartContainer {
+            position: relative;
+            width: 150px;
+            margin: 0 auto;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        #heartContainer img {
+            width: 100%;
+        }
+
+        #bpmText {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
+
+        #chartContainer, #weeklyChartContainer {
+            width: 90%;
+            max-width: 800px;
+            margin: 30px auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            padding: 20px;
+        }
+
+        canvas {
+            width: 100% !important;
+            height: 300px !important;
+        }
+
+        .infoContent {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .infoContent p {
+            text-align: left;
+            font-size: 16px;
+        }
+
+        .infoContent button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #228B22;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .infoContent button:hover {
+            background-color: #1e7a1e;
+        }
+
+        .historico-container {
+            max-width: 800px;
+            margin: 30px auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            padding: 20px;
+        }
+
+        .historico-container h2 {
+            margin-bottom: 15px;
+        }
+
+        .tabela-batimentos {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .tabela-batimentos th, .tabela-batimentos td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        
+        button {
+          background-color: #4CAF50; /* verde bonito */
+          border: none;
+          color: white;
+          padding: 10px 20px;
+          margin: 8px 5px;
+          border-radius: 8px;
+          cursor: pointer;
+          font-size: 16px;
+          transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+          background-color: #45a049;
+        }
+
+
+        
     </style>
 </head>
-
 <body>
-    <header id="header">
-        <a class="empresa" href="/PulsoCM/static/templates/logado.html">
-            <img id="logo" src="/PulsoCM/static/img/logo.png" alt="logo">
-            <p>Pulso da História CM</p>
-        </a>
-
-        <nav>
-            <ul>
-                <li class="drop-hover"><a id="history" href="#">História <i class="fa-solid fa-caret-down"></i></a>
-                    <div class="drop">
-                        <a href="/PulsoCM/static/templates/secaoCM.html">Conheça CM</a>
-                        <a href="/PulsoCM/static/templates/secaoP.html">Personalidades</a>
-                        <a href="/PulsoCM/static/templates/secaoF.html">Folclore</a>
-                    </div>
-                </li>
-                <li><a href="/PulsoCM/static/templates/secaoE.html">Engenhos</a></li>
-                <li><a href="/PulsoCM/static/templates/rotas.html">Rotas</a></li>
-                <li><a href="/PulsoCM/static/templates/chat.html">Chat</a></li>
-                <li><a href="/PulsoCM/static/templates/saude.html">Saúde</a></li>
-            </ul>
-        </nav>
-
-        <!--aqui fica o nome do usuário-->
-        <a href="/PulsoCM/static/templates/login.html"><button>Sair</button></a> <!--botão de sair, ver outro formato-->
-    </header>
-
-    <div class="caminho">
-        <h6>
-            <a href="/PulsoCM/static/templates/logado.html">HOME</a> > <a href="/PulsoCM/static/templates/saude.html">SAÚDE</a>
-        </h6>
-    </div>
-
     <main>
         <h1>Gráfico de Frequência Cardíaca</h1>
-        
+        <div id="heartContainer">
+            <img src="coracao.png" alt="Coração Verde">
+            <div id="bpmText">75 BPM</div>
+        </div>
+
         <div id="chartContainer">
             <canvas id="heartRateChart"></canvas>
         </div>
 
-        <script>
-            // Configuração inicial do gráfico de batimentos cardíacos
-            const ctx = document.getElementById('heartRateChart').getContext('2d');
-            const heartRateChart = new Chart(ctx, {
-              type: 'line',
-              data: {
-                labels: ['10:00', '10:01', '10:02', '10:03', '10:04'], // Etiquetas fixas
-                datasets: [{
-                  label: 'Batimentos por Minuto (BPM)',
-                  backgroundColor: 'rgba(144, 238, 144, 0.2)', // Cor de fundo verde claro
-                  borderColor: 'rgba(0, 128, 0, 1)',           // Cor da borda verde vibrante
-                  data: [75, 80, 78, 82, 76], // Dados fixos
-                  tension: 0.4, // curva suave para simular um ritmo cardíaco
-                  pointRadius: 0 // remove os pontos visíveis
-                }]
-              },
-              options: {
-                responsive: true,
-                scales: {
-                  x: {
-                    title: {
-                      display: true,
-                      text: 'Tempo'
-                    }
-                  },
-                  y: {
-                    beginAtZero: true,
-                    title: {
-                      display: true,
-                      text: 'Batimentos por Minuto (BPM)'
-                    },
-                    suggestedMax: 120 // valor máximo sugerido para batimentos cardíacos
-                  }
-                }
-              }
-            });
-        
-            // Função para gerar valores de batimentos cardíacos simulados
-            function generateHeartRate() {
-              const baseRate = 75; // Batimento cardíaco base
-              const variation = Math.floor(Math.random() * 10) - 5; // Variação aleatória entre -5 e 5
-              return baseRate + variation;
-            }
-        
-            // Função para atualizar os dados do gráfico
-            function updateChart() {
-              const newTime = new Date().toLocaleTimeString(); // Novo rótulo de tempo
-              const newBPM = generateHeartRate(); // Novo valor de BPM simulado
-        
-              // Adiciona novos dados ao gráfico
-              heartRateChart.data.labels.push(newTime);
-              heartRateChart.data.datasets[0].data.push(newBPM);
-        
-              // Remove o primeiro dado se houver mais de 10 pontos
-              if (heartRateChart.data.labels.length > 10) {
-                heartRateChart.data.labels.shift();
-                heartRateChart.data.datasets[0].data.shift();
-              }
-        
-              // Atualiza o gráfico
-              heartRateChart.update();
-            }
-        
-            // Atualiza o gráfico a cada 2 segundos
-            setInterval(updateChart, 3000);
-          </script>
-    </main>
-
-    <footer>
-        <div class="links">
-            <a href="https://cearamirim.rn.gov.br/" target="_blank">
-                <img src="/PulsoCM/static/img/brasaoCM.svg">
-                <p>Prefeitura <br> Municipal</p>
-            </a>
-
-            <a href="https://www.facebook.com/people/ACLA-Pedro-Sim%C3%B5es-Neto/100064889582779/" target="_blank">
-                <img src="/PulsoCM/static/img/ACLA.png">
-                <p>ACLA</p>
-            </a>
-
-            <a href="https://www.cearamirim.rn.leg.br/" target="_blank">
-                <img src="/PulsoCM/static/img/camara.png">
-                <p>Câmara <br> Municipal</p>
-            </a>
-
-            <a href="https://gibsonmachadocm.blogspot.com/" target="_blank">
-                <img src="/PulsoCM/static/img/blogger.png">
-                <p>Ceará-Mirim <br>Cultura e Arte</p>
-            </a> 
+        <div class="infoContent">
+            <p><strong>Não possui o protótipo?</strong> Não tem problema!<br>
+            Verifique seus batimentos por minuto usando a câmera do celular.</p>
+            <button onclick="usarCamera()">Usar a Câmera</button>
         </div>
 
-        <div class="sobre">
-            <h2>Se aventure conosco!</h2>
-            <ul>
-                <li>
-                    <a href="/PulsoCM/static/templates/politica.html">
-                        Políticas e Termos
-                    </a>
-                </li>
+        <div class="historico-container">
+            <h2>Veja seu histórico</h2>
+            <table class="tabela-batimentos">
+                <tr>
+                    <th>Mínimo</th>
+                    <th>Média</th>
+                    <th>Máximo</th>
+                </tr>
+                <tr>
+                    <td>65</td>
+                    <td>78</td>
+                    <td>92</td>
+                </tr>
+            </table>
+
             
-                <li>
-                    <a href="mailto: pulsodahistoriacm@gmail.com">
-                        Mande sua dúvida
-                    </a>
-                </li>
-                <li>
-                    <a href="/PulsoCM/static/templates/about.html">
-                        Sobre Nós
-                    </a>
-                </li>
-            </ul>
+
+            <!-- Adiciona o botão abaixo do gráfico -->
+            <canvas id="weeklyChart" width="400" height="200"></canvas>
+            <br>
+            <button onclick="baixarDados()">Baixar CSV</button>
+            <button onclick="baixarGrafico()">Baixar Gráfico</button>
+
         </div>
 
-        <div class="bottom-footer">
-            <span id="copyright">
-                &copy 2025 Pulso da História CM - Todos os direitos reservados.
-            </span>
-        </div>
-    </footer>
+        <script>
+            const ctx = document.getElementById('heartRateChart').getContext('2d');
+            const bpmText = document.getElementById('bpmText');
 
-    <script src="/PulsoCM/static/javascript/headerColorido.js"></script>
+            const heartRateChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['10:00', '10:01', '10:02', '10:03', '10:04'],
+                    datasets: [{
+                        label: 'Batimentos por Minuto (BPM)',
+                        backgroundColor: 'rgba(144, 238, 144, 0.2)',
+                        borderColor: 'rgba(0, 128, 0, 1)',
+                        data: [75, 85, 72, 90, 78],
+                        tension: 0.3,
+                        pointRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        tooltip: {
+                            backgroundColor: '#2e7d32',
+                            titleFont: { weight: 'bold' },
+                            bodyColor: '#fff'
+                        }
+                    },
+                    scales: {
+                        x: { title: { display: true, text: 'Tempo' } },
+                        y: { beginAtZero: false, title: { display: true, text: 'BPM' }, suggestedMin: 60, suggestedMax: 120 }
+                    }
+                }
+            });
+
+            function generateHeartRate() {
+                return 70 + Math.floor(Math.random() * 20);
+            }
+
+            function updateChart() {
+                const newTime = new Date().toLocaleTimeString();
+                const newBPM = generateHeartRate();
+
+                heartRateChart.data.labels.push(newTime);
+                heartRateChart.data.datasets[0].data.push(newBPM);
+
+                if (heartRateChart.data.labels.length > 10) {
+                    heartRateChart.data.labels.shift();
+                    heartRateChart.data.datasets[0].data.shift();
+                }
+
+                heartRateChart.update();
+                bpmText.textContent = newBPM + ' BPM';
+            }
+
+            setInterval(updateChart, 60000);
+
+            const weeklyChart = new Chart(document.getElementById('weeklyChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['1ª Sem', '2ª Sem', '3ª Sem', '4ª Sem'],
+                    datasets: [{
+                        label: 'Média semanal de BPM',
+                        backgroundColor: '#81c784',
+                        borderColor: '#388e3c',
+                        data: [75, 78, 80, 76],
+                        borderWidth: 1,
+                        borderRadius: 10
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: false,
+                            suggestedMin: 60,
+                            suggestedMax: 100
+                        }
+                    }
+                }
+            });
+
+            function usarCamera() {
+                alert('Função de câmera será implementada futuramente!');
+            }
+
+            function baixarDados() {
+                    const labels = weeklyChart.data.labels;
+                    const data = weeklyChart.data.datasets[0].data;
+
+                    let csvContent = "Histórico Semanal de Frequência Cardíaca\n";
+                    csvContent += "------------------------------------------\n";
+                    csvContent += "Período,Frequência Cardíaca Média (BPM)\n";
+
+                    for (let i = 0; i < labels.length; i++) {
+                        csvContent += `${labels[i]},${data[i]}\n`;
+                    }
+
+                    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+                    const url = URL.createObjectURL(blob);
+
+                    const a = document.createElement("a");
+                    a.href = url;
+                    a.download = "historico_frequencia_cardiaca.csv";
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                }
+            function baixarGrafico() {
+                    const link = document.createElement('a');
+                    link.download = 'grafico_frequencia_cardiaca.png';
+                    link.href = weeklyChart.toBase64Image();  // gera imagem do gráfico
+                    link.click();
+                }
+            
+
+        </script>
+    </main>
 </body>
 </html>
