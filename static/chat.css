@@ -45,8 +45,8 @@
     overflow: hidden;
     position: relative;
     z-index: 1;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 250px;
+    margin-bottom: 200px;
   }
 
   .side-image {
