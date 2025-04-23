@@ -18,146 +18,209 @@
     
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to bottom right, #e0f7fa, #f1f8e9);
-            text-align: center;
-        }
+   <style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to bottom right, #e0f7fa, #f1f8e9);
+        text-align: center;
+    }
 
-        header button{
-            font-size: 13px;
-        }
+    header button {
+        font-size: 13px;
+    }
 
-        main{
-            margin-top: 115px;
-        }
+    main {
+        margin-top: 115px;
+    }
 
+    h1 {
+        font-size: 28px;
+        margin-top: 20px;
+    }
+
+    #heartContainer {
+        position: relative;
+        width: 150px;
+        margin: 0 auto;
+        animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+
+    #heartContainer img {
+        width: 100%;
+    }
+
+    #bpmText {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+    }
+
+    #chartContainer, #weeklyChartContainer {
+        width: 90%;
+        max-width: 800px;
+        margin: 30px auto;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        padding: 20px;
+    }
+
+    canvas {
+        width: 100% !important;
+        height: 300px !important;
+    }
+
+    .infoContent {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        gap: 20px;
+    }
+
+    .infoContent p {
+        text-align: left;
+        font-size: 16px;
+        flex: 1;
+    }
+
+    .infoContent button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #228B22;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .infoContent button:hover {
+        background-color: #1e7a1e;
+    }
+
+    .historico-container {
+        max-width: 800px;
+        margin: 30px auto;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        padding: 20px;
+    }
+
+    .historico-container h2 {
+        margin-bottom: 15px;
+    }
+
+    .tabela-batimentos {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    .tabela-batimentos th, .tabela-batimentos td {
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-align: center;
+    }
+
+    button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        margin: 8px 5px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    @media (max-width: 1366px) {
         h1 {
-            font-size: 28px;
-            margin-top: 20px;
-        }
-
-        #heartContainer {
-            position: relative;
-            width: 150px;
-            margin: 0 auto;
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-
-        #heartContainer img {
-            width: 100%;
+            font-size: 24px;
         }
 
         #bpmText {
-            position: absolute;
-            top: 45%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 20px;
-            font-weight: bold;
-            color: white;
-        }
-
-        #chartContainer, #weeklyChartContainer {
-            width: 90%;
-            max-width: 800px;
-            margin: 30px auto;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-            padding: 20px;
-        }
-
-        canvas {
-            width: 100% !important;
-            height: 300px !important;
-        }
-
-        .infoContent {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 800px;
-            margin: 30px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            font-size: 18px;
         }
 
         .infoContent p {
-            text-align: left;
-            font-size: 16px;
+            font-size: 15px;
         }
 
         .infoContent button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #228B22;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: background-color 0.3s;
+            font-size: 15px;
+            padding: 8px 18px;
         }
+    }
 
-        .infoContent button:hover {
-            background-color: #1e7a1e;
-        }
-
-        .historico-container {
-            max-width: 800px;
-            margin: 30px auto;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    @media (max-width: 780px) {
+        main {
+            margin-top: 80px;
             padding: 20px;
         }
 
-        .historico-container h2 {
-            margin-bottom: 15px;
+        h1 {
+            font-size: 22px;
+            margin-top: 10px;
         }
 
-        .tabela-batimentos {
+        #heartContainer {
+            width: 120px;
+        }
+
+        #bpmText {
+            font-size: 16px;
+        }
+
+        .infoContent {
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .infoContent p {
+            font-size: 14px;
+        }
+
+        .infoContent button {
             width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-
-        .tabela-batimentos th, .tabela-batimentos td {
-            padding: 10px;
-            border: 1px solid #ddd;
             text-align: center;
         }
 
-        
-        button {
-          background-color: #4CAF50; /* verde bonito */
-          border: none;
-          color: white;
-          padding: 10px 20px;
-          margin: 8px 5px;
-          border-radius: 8px;
-          cursor: pointer;
-          font-size: 16px;
-          transition: background-color 0.3s ease;
+        .tabela-batimentos th,
+        .tabela-batimentos td {
+            font-size: 13px;
+            padding: 8px;
         }
 
-        button:hover {
-          background-color: #45a049;
+        canvas {
+            height: 250px !important;
         }
+    }
+</style>
 
-
-        
-    </style>
 </head>
 
 <body>
