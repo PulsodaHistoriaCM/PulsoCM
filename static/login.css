@@ -1,38 +1,37 @@
-* {
+*{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Nunito  Sans', sans-serif;
 }
 
-body {
+body{
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background: #8ac44f;
-    padding: 1rem;
 }
 
-h1 {
+h1{
     color: #3d550c; 
     text-align: center;
 }
 
-p {
+p{
     color: #fff;
 }
 
-.paragrafo {
+.paragrafo{
     color: #3d550c;
 }
 
-.input-group input {
+.input-group input{
     border: 1px solid black;
 }
 
-.forms-login {
+.forms-login{
     width: 500px;
     height: 450px;
     flex-direction: column;
@@ -42,33 +41,27 @@ p {
     padding: 3rem;
     border-radius: 30px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
-    display: flex;
 }
 
-.login-header {
+.login-header{
     margin-top: 0.5rem;
     margin-bottom: 3rem;
     display: flex;
     justify-content: space-between;
 } 
 
-.input-group {
+.input-group{
     align-items: center;
     margin: 20px auto;
-    display: flex;
-    flex-wrap: wrap;
 }
 
-.input-box {
+.input-box{
     display: flex;
     flex-direction: column;
     margin-bottom: 1.1rem;
-    flex: 1;
-    min-width: 45%;
-    padding: 0 5px;
 }
 
-.input-box input {
+.input-box input{
     margin: 0.6rem 0;
     padding: 0.8rem 1.2rem;
     border: none;
@@ -77,29 +70,29 @@ p {
     font-size: 0.8rem;
 }
 
-.input-group .input-box input::placeholder {
+.input-group .input-box input::placeholder{
     color: gray;
 }
 
-.input-box input:hover {
+.input-box input:hover{
     background-color: #eeeeee75;
 }
 
-.input-box input:focus-visible {
+.input-box input:focus-visible{
     outline: 1px solid black;
 }
 
-.input-box label {
+.input-box label{
     font-size: 0.75rem;
     font-weight: 600;
     color: #000000;
 }
 
-.input-box input::placeholder {
+.input-box input::placeholder{
     color: #000000;
 }
 
-.login-button button {
+.login-button button{
     width: 100%;
     margin-bottom: 20px;
     border: none;
@@ -109,81 +102,50 @@ p {
     cursor: pointer;
 }
 
-.login-button button:hover {
+.login-button button:hover{
     background-color: #75bd2e;
     border: 1px solid #c4c2c275;
 }
 
-.login-button button a {
+.login-button button a{
     text-decoration: none;
     font-size: 0.93rem;
     font-weight: 500;
     color: #000000;
 }
 
-#mensagem {
+#mensagem{
     font-size: 18px;
-    color: #ff6600;
+    color: #ff6600; /*mudar cor*/
     font-weight: bold;
     margin-top: 10px;
 }
 
-.senha-nova {
-    margin-top: 5px;
+.senha-nova{
+    margin-top: 5x;
     font-size: 12px;
     text-align: center;
 }
 
-.senha-nova a {
+.senha-nova a{
     text-decoration: none;
     color: #3d550c;
 }
 
-.senha-nova a:hover {
+.senha-nova a:hover{
     text-decoration: underline;
 }
 
-@media screen and (max-width: 780px) {
-    .forms-login {
+/*VERSÃO MOBILE*/
+@media screen and (max-width: 320px) {
+    .forms-login{
         width: 90%;
-        padding: 2rem;
-        height: auto;
+        height: 450px;
+        transform: translateX(5%);
     }
-
-    .input-group {
+    .input-group{
         flex-direction: column;
-        align-items: center;
+        flex-wrap: nowrap;
+        max-height: 10rem;
     }
-
-    .input-box {
-        width: 100%;
-        padding: 0;
-    }
-
-    .login-header {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    h1 {
-        font-size: 1.5rem;
-    }
-
-    .login-button button {
-        font-size: 1rem;
-    }
-}
-
-
-@media screen and (max-width: 1366px) {
-    .forms-login {
-        width: 80%;
-        max-width: 600px;
-        height: auto;
-    }
-
-    .input-box {
-        min-width: 100%;
-    }
-}
+} 
