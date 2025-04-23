@@ -1,4 +1,4 @@
-main{
+main {
     background-color: #fff;
     border-radius: 40px;
     width: 80%;
@@ -9,31 +9,37 @@ main{
     box-shadow: 3px 2px 4px gray;
 }
 
-main a{
+
+main a {
     font-size: 17px;
 }
 
-main a:hover{
+
+main a:hover {
     color: blue;
 }
 
-h1, figcaption{
+
+h1, figcaption {
     text-align: center;
 }
 
-h1{
+
+h1 {
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
-h4{
+
+h4 {
     font-weight: lighter;
     font-size: 15px;
     padding-bottom: 5px;
     padding-left: 10px;
 }
 
-main img{
+
+main img {
     display: block;
     margin: auto;
     padding-top: 20px;
@@ -41,42 +47,134 @@ main img{
     width: 35%;
 }
 
-figcaption{
+
+figcaption {
     font-size: 12px;
     padding-bottom: 10px;
 }
 
-article p{
+
+article p {
     text-align: justify;
     padding: 10px;
     font-size: 17px;
 }
 
-h3{
+
+h3 {
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
-#curiosity li{
+
+#curiosity li {
     text-align: justify;
     padding-bottom: 10px;
     font-size: 17px;
     margin-left: 20px;
 }
 
-#curiosity p{
+
+#curiosity p {
     font-size: 17px;
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 20px;
 }
 
-#final p{
+
+#final p {
     padding-bottom: 10px;
 }
 
-#final a{
+
+#final a {
     display: flex;
     flex-direction: column;
     padding-bottom: 10px;
+}
+
+@media (max-width: 1366px) {
+    main {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 30px;
+    }
+
+
+    main img {
+        width: 45%;
+    }
+
+
+    article p,
+    #curiosity li,
+    #curiosity p {
+        font-size: 16px;
+    }
+
+
+    h1 {
+        font-size: 26px;
+    }
+
+
+    h3 {
+        font-size: 20px;
+    }
+}
+
+
+@media (max-width: 780px) {
+    main {
+        width: 95%;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+
+    main img {
+        width: 90%;
+        padding-top: 15px;
+        padding-bottom: 10px;
+    }
+
+
+    h1 {
+        font-size: 22px;
+        padding: 15px 0;
+    }
+
+
+    h3 {
+        font-size: 18px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+
+    h4 {
+        font-size: 14px;
+        padding-left: 5px;
+    }
+
+
+    figcaption {
+        font-size: 11px;
+    }
+
+
+    article p,
+    #curiosity li,
+    #curiosity p {
+        font-size: 15px;
+        padding: 5px 8px;
+    }
+
+
+    #final a {
+        font-size: 15px;
+    }
 }
