@@ -1,26 +1,31 @@
-*{
+* {
     font-family: 'Nunito Sans', sans-serif;
 }
 
-.caminho{
+
+.caminho {
     margin-top: 80px;
     margin-bottom: 40px;
 }
 
-.caminho h2{
+
+.caminho h2 {
     padding-left: 45px;
     margin-bottom: 15px;
 }
 
-.caminho a{
+
+.caminho a {
     font-weight: lighter;
 }
 
-.caminho a:hover{
+
+.caminho a:hover {
     text-decoration: underline;
 }
 
-.caminho h6{
+
+.caminho h6 {
     background-color: #8ac44f;
     padding: 25px;
     padding-left: 45px;
@@ -28,18 +33,23 @@
     font-size: 15px;
 }
 
-a{
+
+a {
     color: #050505;
     text-decoration: none;
 }
 
-.artigos{
-    display: block;
+
+.artigos {
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: 30px;
     margin-bottom: 50px;
 }
 
-.artigo{
+
+.artigo {
     background-color: #ffffffc0;
     border-style: solid;
     border-color: rgba(0, 0, 0, 0.363);
@@ -50,27 +60,98 @@ a{
     display: flex;
 }
 
-.content{
+
+.content {
     padding: 40px;
 }
 
-.content p{
+
+.content p {
     padding-top: 10px;
     padding-bottom: 10px;
     text-align: justify;
 }
 
-.content a:hover{
+
+.content a:hover {
     color: rgb(148, 148, 44);
 }
 
-#access{
+
+#access {
     font-size: 15px;
 }
 
-.artigos{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
+
+@media screen and (max-width: 480px) {
+    .caminho {
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+
+
+    .caminho h2 {
+        padding-left: 20px;
+        font-size: 1.2rem;
+    }
+
+
+    .caminho h6 {
+        font-size: 14px;
+        padding: 15px 20px;
+    }
+
+
+    .artigo {
+        flex-direction: column;
+        width: 95%;
+        border-width: 1.5px;
+        box-shadow: 2px 2px rgb(179, 169, 169);
+    }
+
+
+    .content {
+        padding: 20px;
+    }
+
+
+    .content p {
+        font-size: 14px;
+    }
+
+
+    #access {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .caminho h2 {
+        font-size: 1.5rem;
+    }
+
+
+    .caminho h6 {
+        font-size: 15px;
+    }
+
+
+    .artigo {
+        width: 95%;
+    }
+
+
+    .content {
+        padding: 30px;
+    }
+
+
+    .content p {
+        font-size: 15px;
+    }
+
+
+    #access {
+        font-size: 15px;
+    }
 }
