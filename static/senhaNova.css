@@ -1,11 +1,12 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Nunito  Sans', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
-body{
+
+body {
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -14,80 +15,92 @@ body{
     background: #8ac44f;
 }
 
-h1{
-    color: #3d550c; 
+
+h1 {
+    color: #3d550c;
     text-align: center;
+    margin-bottom: 1rem;
 }
 
-main{
-    width: 500px;
-    height: 380px;
+
+main {
+    width: 90%;
+    max-width: 500px;
+    min-width: 280px;
+    height: auto;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #f3fadc; 
-    padding: 3rem;
+    background: #f3fadc;
+    padding: 2rem;
     border-radius: 30px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
 }
 
-p{
+
+p {
     color: #fff;
 }
 
-.paragrafo{
+
+.paragrafo {
     color: #3d550c;
 }
 
-.input-group input{
-    border: 1px solid black;
-}
 
-.input-group{
+.input-group {
     align-items: center;
     margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
-.input-box{
+
+.input-box {
     display: flex;
     flex-direction: column;
     margin-bottom: 1.1rem;
+    width: 100%;
 }
 
-.input-box input{
+
+.input-box input {
     margin: 0.6rem 0;
     padding: 0.8rem 1.2rem;
     border: none;
     border-radius: 10px;
     box-shadow: 1px 1px 6px gray;
     font-size: 0.8rem;
+    width: 100%;
 }
 
-.input-group .input-box input::placeholder{
-    color: gray;
+
+.input-box input::placeholder {
+    color: #000000;
 }
 
-.input-box input:hover{
+
+.input-box input:hover {
     background-color: #eeeeee75;
 }
 
-.input-box input:focus-visible{
+
+.input-box input:focus-visible {
     outline: 1px solid black;
 }
 
-.input-box label{
+
+.input-box label {
     font-size: 0.75rem;
     font-weight: 600;
     color: #000000;
 }
 
-.input-box input::placeholder{
-    color: #000000;
-}
 
-button{
+button {
     width: 100%;
-    margin-bottom: 20px;
+    margin-top: 1rem;
     border: none;
     background: #3d550c;
     color: #fff;
@@ -96,25 +109,42 @@ button{
     cursor: pointer;
 }
 
-button:hover{
+
+button:hover {
     background-color: #75bd2e;
     border: 1px solid #c4c2c275;
 }
 
-/*VERSÃO MOBILE*/
-@media screen and (max-width: 320px) {
-    main{
+@media screen and (max-width: 480px) {
+    main {
+        padding: 1.5rem;
+        width: 90%;
+    }
+
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+    main {
         width: 80%;
-        height: 350px;
+        padding: 2.5rem;
     }
 
-    h1{ 
-        font-size: 24px;
+
+    h1 {
+        font-size: 1.8rem;
+    }
+}
+@media screen and (min-width: 1025px) and (max-width: 1366px) {
+    main {
+        width: 500px;
+        padding: 3rem;
     }
 
-    .input-group{
-        flex-direction: column;
-        flex-wrap: nowrap;
-        max-height: 10rem;
+
+    h1 {
+        font-size: 2rem;
     }
-} 
+}
