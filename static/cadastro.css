@@ -159,7 +159,7 @@ button:hover {
     padding-bottom: 15px;
 }
 
-/* === MOBILE 320px x 780px === */
+
 @media screen and (max-width: 480px) {
     form {
         width: 90%;
