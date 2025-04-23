@@ -1,4 +1,4 @@
-*{
+* {
   padding: 0;
   margin: 0;
   font-family: 'Nunito Sans', sans-serif;
@@ -37,7 +37,6 @@ body::before {
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  /*position: relative;*/
   z-index: 1;
   margin-top: 150px;
   margin-bottom: 100px;
@@ -151,4 +150,64 @@ button {
   color: white;
   border-radius: 6px;
   cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .chat-container {
+    width: 95%;
+    height: 85vh;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    border-radius: 8px;
+  }
+
+  .input-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #userInput,
+  .responder-input input {
+    width: 100%;
+  }
+
+  .responder-input {
+    flex-direction: column;
+  }
+
+  .responder-input button {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  button {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .mensagem {
+    font-size: 0.95rem;
+  }
+
+  .sugestao {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 1366px) {
+  .chat-container {
+    width: 95%;
+    max-width: 900px;
+    height: 90vh;
+    margin-top: 120px;
+    margin-bottom: 80px;
+  }
+
+  .input-container {
+    padding: 8px;
+  }
+
+  .mensagem {
+    font-size: 1rem;
+  }
 }
