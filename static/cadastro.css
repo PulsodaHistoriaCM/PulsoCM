@@ -25,13 +25,13 @@ form {
     justify-content: center;
     align-items: center;
     background-color: #f3fadc;
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 30px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
     position: relative;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%);
 }
 
 h1 {
