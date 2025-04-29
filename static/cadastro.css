@@ -16,9 +16,7 @@ body {
 }
 
 form {
-    width: 70%;
-    max-width: 800px;
-    min-width: 300px;
+    width: 35%;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -28,10 +26,10 @@ form {
     padding: 1.5rem;
     border-radius: 30px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
-    position: relative;
+    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%);
+    transform: translate(-50%, -50%);
 }
 
 h1 {
@@ -85,15 +83,7 @@ h1 {
 .bottom-form {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    gap: 100px;
     width: 100%;
-}
-
-.gender-inputs,
-.heart {
-    display: flex;
-    flex-direction: column;
 }
 
 .gender-group {
@@ -150,7 +140,12 @@ button:hover {
 
 /*PARTE 2*/
 .cad2 {
+    width: 45%;
     height: 85%;
+}
+
+.cad2 h1{
+    padding-bottom: 30px;
 }
 
 .cad2 p {
@@ -160,41 +155,87 @@ button:hover {
 }
 
 
-@media screen and (max-width: 480px) {
-    form {
-        width: 90%;
-        height: auto;
-        padding: 1.5rem;
+@media screen and (max-width: 320px){
+    form{
+        height: 550px;
+        align-items: flex-start !important;
+        margin: 0 auto;
     }
 
-    .input-group {
-        flex-direction: column;
-        max-height: 300px;
-        overflow-y: auto;
+    .input-box{
+        width: 100%;
     }
 
+    .input-group,
+    .bottom-form,
     .input-box {
+        width: 100% !important;
+    }
+
+
+    .input-group{
+        flex-direction: column;
+        overflow-y: scroll;
+        flex-wrap: nowrap;
+        max-height: 10rem;
+    }
+
+    .bottom-form{
+        flex-direction: column;
+        gap: 0 !important;
+    }
+
+    .gender-inputs{
+        margin-top: 15px;
+    }
+
+    .gender-inputs h6,
+    .heart-title h6{
+        padding-bottom: 10px;
+    }
+
+    .gender-group{
+        margin-top: 0px;
+        margin-bottom: 15px;
+        gap: 0;
+        flex-direction: column;
+        margin-left: 10px;
+    }
+
+    .gender-input{
+        margin-top: 0.5rem;
+    }
+
+    .heart{
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+
+    .heart-radios {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .heart-input{
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+
+    button{
         width: 100%;
     }
 
-    .bottom-form {
-        flex-direction: column;
-        gap: 20px;
+    /*CADASTRO2*/
+    .cad2{
+        width: 85%;
+        margin-left: -5px;
+        margin-top: -20px;
+        overflow-y: scroll;
     }
 
-    .gender-group {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .heart-input {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-left: 0;
-    }
-
-    button {
-        width: 100%;
+    .cad2 h1{
+        padding-top: 780px;
+        font-size: 30px;
     }
 }
 
