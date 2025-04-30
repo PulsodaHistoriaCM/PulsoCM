@@ -15,51 +15,35 @@
     
     <title>Sobre Nós</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
-            padding: 10px;
-        }
-        
-        /*header {
+    <style> 
+        h1{
+            padding-top: 70px;
+            padding-bottom: 5px;
             text-align: center;
-            background-color: #0f4c81;
-            color: #fff;
-            padding: 20px;
-        }*/
-        
-        header h1 {
-            font-size: 2em;
-            margin-bottom: 10px;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: auto;
-            padding: 20px;
+            text-align: justify;
         }
         
-        section {
-            margin-bottom: 40px;
+        .container h2 {
+            margin-bottom: 20px;
         }
-        
-        h2 {
-            color: #0f4c81;
+
+        .container p{
             margin-bottom: 10px;
         }
         
-        h3 {
-            margin-top: 15px;
-            color: #333;
+        .container h3 {
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+
+        .container #second,
+        .developers{
+            margin-top: -20px;
         }
      
         .developers .team-photo img {
@@ -128,7 +112,6 @@
                 padding: 40px;
             }
         
-        
             .dev-photos {
                 justify-content: space-evenly;
             }
@@ -139,7 +122,7 @@
 <body>
     <header id="header">
         <a class="empresa" href="/PulsoCM/index.html">
-            <img id="logo" src="/PulsoCM/static/img/logo.png" alt="logo">
+            <img id="logo" src="/static/img/logo.png" alt="logo">
             <p>Pulso da História CM</p>
         </a>
 
@@ -162,61 +145,54 @@
     </header>
 
    <div class="container">
+    <h1>Sobre Nós</h1>
     <section>
-      <h2>O que é?</h2>
-      <p>Nosso aplicativo é uma plataforma interativa voltada para o turismo saudável em Ceará-Mirim. Ele combina tecnologia, saúde e cultura, oferecendo rotas personalizadas para pontos turísticos da cidade, ao mesmo tempo em que monitora sua saúde durante os trajetos — incluindo seus batimentos cardíacos.</p>
-      <p>Além disso, ele funciona como uma rede social local, onde os usuários podem compartilhar suas experiências, comentar, curtir e trocar informações sobre os trajetos percorridos.</p>
+        <h2>O que é?</h2>
+        <p>Nosso aplicativo é uma plataforma interativa voltada para o turismo saudável em Ceará-Mirim. Ele combina tecnologia, saúde e cultura, oferecendo rotas personalizadas para pontos turísticos da cidade, ao mesmo tempo em que monitora sua saúde durante os trajetos — incluindo seus batimentos cardíacos.</p>
+        <p>Além disso, ele funciona como uma rede social local, onde os usuários podem compartilhar suas experiências, comentar, curtir e trocar informações sobre os trajetos percorridos.</p>
     </section>
 
-
-    <section>
+    <section id="second">
       <h2>Como funciona?</h2>
-      <h3>Rotas Inteligentes</h3>
+      <h3>- Rotas Inteligentes</h3>
       <p>O usuário escolhe o ponto turístico que deseja visitar e o meio de transporte preferido (bicicleta, carro ou a pé). O app então oferece a melhor rota, considerando segurança, acessibilidade e conforto.</p>
 
-
-      <h3>Monitoramento de Saúde</h3>
+      <h3>- Monitoramento de Saúde</h3>
       <p>Durante o percurso, o aplicativo monitora os batimentos cardíacos em tempo real (com dispositivos compatíveis), fornecendo dados importantes para sua segurança e bem-estar.</p>
 
-
-      <h3>Conteúdo Cultural e Histórico</h3>
+      <h3>- Conteúdo Cultural e Histórico</h3>
       <p>Cada ponto turístico conta com imagens e uma breve explicação histórica, permitindo que o usuário conheça mais sobre o local que está visitando.</p>
 
-
-      <h3>Comunidade Ativa</h3>
+      <h3>- Comunidade Ativa</h3>
       <p>No chat integrado, os usuários podem comentar suas experiências, dar dicas, avaliar as rotas e interagir com outros viajantes, ajudando a construir uma comunidade colaborativa em torno do turismo consciente e saudável.</p>
     </section>
-
 
     <section class="developers">
       <h2>Desenvolvedoras</h2>
 
-
       <!-- Foto das três juntas -->
       <div class="team-photo">
-        <img src="img/tres.jpeg" alt="Equipe de Desenvolvedoras" />
+        <img src="/static/img/grupo.jpg" alt="Equipe de Desenvolvedoras" />
       </div>
-
 
       <!-- Fotos individuais -->
       <div class="dev-photos">
         <div class="dev-card">
-          <img src="img/bia.jpeg" alt="Desenvolvedora 1" />
+          <img src="/PulsoCM/static/img/bia.jpg" alt="Desenvolvedora 1" />
           <p>Nome 1</p>
         </div>
         <div class="dev-card">
-          <img src="img/eu.jpeg" alt="Desenvolvedora 2" />
+          <img src="/PulsoCM/static/img/kali.jpg" alt="Desenvolvedora 2" />
           <p>Nome 2</p>
         </div>
         <div class="dev-card">
-          <img src="foto3.jpg" alt="Desenvolvedora 3" />
+          <img src="/PulsoCM/static/img/maria.jpg" alt="Desenvolvedora 3" />
           <p>Nome 3</p>
         </div>
       </div>
     </section>
   </div>
-
-
+    
   <footer>
     <div class="content">
         <div class="a cta">
