@@ -24,50 +24,51 @@
 
 <body>
   <header id="header">
-      <a class="empresa" href="/PulsoCM/static/templates/logado.html">
-          <img id="logo" src="/PulsoCM/static/img/logo.png" alt="logo">
-          <p>Pulso da História CM</p>
-      </a>
+        <a class="empresa" href="/PulsoCM/static/templates/home.html">
+            <img id="logo" src="/PulsoCM/static/img/logo.png" alt="logo">
+            <p id="nome">Pulso da História CM</p>
+        </a>
 
-      <nav>
-          <ul>
-              <li class="drop-hover"><a id="history" href="#">História <i class="fa-solid fa-caret-down"></i></a>
-                  <div class="drop">
-                      <a href="/PulsoCM/static/templates/secaoCM.html">Conheça CM</a>
-                      <a href="/PulsoCM/static/templates/secaoP.html">Personalidades</a>
-                      <a href="/PulsoCM/static/templates/secaoF.html">Folclore</a>
-                  </div>
-              </li>
-              <li><a href="/PulsoCM/static/templates/secaoE.html">Engenhos</a></li>
-              <li><a href="/PulsoCM/static/templates/rotas.html">Rotas</a></li>
-              <li><a href="/PulsoCM/static/templates/chat.html">Chat</a></li>
-              <li><a href="/PulsoCM/static/templates/saude.html">Saúde</a></li>
-          </ul>
-      </nav>
+        <!--DESKTOP-->
+        <nav id="desktop">
+            <ul>
+                <li class="drop-hover"><a id="history" href="#">História <i class="fa-solid fa-caret-down"></i></a>
+                    <div class="drop">
+                        <a href="/PulsoCM/static/templates/secaoCM.html">Conheça CM</a>
+                        <a href="/PulsoCM/static/templates/secaoP.html">Personalidades</a>
+                        <a href="/PulsoCM/static/templates/secaoF.html">Folclore</a>
+                    </div>
+                </li>
+                <li><a href="/PulsoCM/static/templates/secaoE.html">Engenhos</a></li>
+                <li><a href="/PulsoCM/static/templates/rotas.html">Rotas</a></li>
+                <li><a href="/PulsoCM/static/templates/about.html">Sobre Nós</a></li>
+            </ul>
+        </nav>
 
-      <!--MOBILE-->
-      <div class="off-menu">
-        <ul>
-            <li><a href="static/templates/secaoCM.html">Conheça CM</a></li>
-            <li><a href="static/templates/secaoP.html">Personalidades</a></li>
-            <li><a href="static/templates/secaoF.html">Folclore</a></li>
-            <li><a href="static/templates/secaoE.html">Engenhos</a></li>
-            <li><a href="static/templates/rotas.html">Rotas</a></li>
-            <li><a href="static/templates/about.html">Sobre Nós</a></li>
-        </ul>
-    </div>
-
-    <!--fazendo o sanduiche-->
-    <nav class="nav-mobile">
-        <div class="ham-menu">
-            <span></span>
-            <span></span>
-            <span></span>
+        <!--MOBILE-->
+        <div class="nav-mobile">
+            <div class="ham-menu" id="hamburguer">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-    </nav>
 
-      <!--aqui fica o nome do usuário-->
-      <a href="/PulsoCM/static/templates/login.html"><button>Sair</button></a> <!--botão de sair, ver outro formato-->
+        <!--aqui fica o nome do usuário logado-->
+        <div class="off-menu" id="menu">
+            <ul>
+                <li><a href="/PulsoCM/static/templates/secaoCM.html">Conheça CM</a></li>
+                <li><a href="/PulsoCM/static/templates/secaoP.html">Personalidades</a></li>
+                <li><a href="/PulsoCM/static/templates/secaoF.html">Folclore</a></li>
+                <li><a href="/PulsoCM/static/templates/secaoE.html">Engenhos</a></li>
+                <li><a href="/PulsoCM/static/templates/rotas.html">Rotas</a></li>
+                <li><a href="/PulsoCM/static/templates/about.html">Sobre Nós</a></li>
+            </ul>
+            <a href="/PulsoCM/static/templates/login.html"><button>Login</button></a>
+        </div>
+
+        <!--aqui fica o nome do usuário logado-->
+        <a href="/PulsoCM/static/templates/login.html"><button>Login</button></a>
   </header>
   
   <div class="chat-container">
@@ -230,65 +231,70 @@
   </script>
 
   <footer>
-    <div class="content">
-        <div class="a cta">
-            <h2 id="frase-cta">Se aventure conosco!</h2>
+        <div class="content">
+            <div class="a cta">
+                <h2 id="frase-cta">Se aventure conosco!</h2>
+            </div>
+
+            <div class="a links">
+                <a href="https://cearamirim.rn.gov.br/" target="_blank">
+                    <img src="/PulsoCM/static/img/brasaoCM.svg">
+                    <p>Prefeitura <br> Municipal</p>
+                </a>
+
+                <a href="https://www.facebook.com/people/ACLA-Pedro-Sim%C3%B5es-Neto/100064889582779/" target="_blank">
+                    <img src="/PulsoCM/static/img/ACLA.png">
+                    <p>ACLA</p>
+                </a>
+
+                <a href="https://www.cearamirim.rn.leg.br/" target="_blank">
+                    <img src="/PulsoCM/static/img/camara.png">
+                    <p>Câmara Municipal</p>
+                </a>
+
+                <a href="https://gibsonmachadocm.blogspot.com/" target="_blank">
+                    <img src="/PulsoCM/static/img/blogger.png">
+                    <p>Ceará-Mirim <br> Cultura e Arte</p>
+                </a> 
+            </div>
+
+            <div class="a sobre">
+                <h3>Recursos</h3>
+
+                <ul>
+                    <li>
+                        <a href="/PulsoCM/static/templates/politica.html">
+                            Políticas e Termos
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="mailto: pulsodahistoriacm@gmail.com">
+                            Mande sua dúvida
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/PulsoCM/static/templates/about.html">
+                            Sobre Nós
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-
-        <div class="a links">
-            <a href="https://cearamirim.rn.gov.br/" target="_blank">
-                <img src="/PulsoCM/static/img/brasaoCM.svg">
-                <p>Prefeitura <br> Municipal</p>
-            </a>
-
-            <a href="https://www.facebook.com/people/ACLA-Pedro-Sim%C3%B5es-Neto/100064889582779/" target="_blank">
-                <img src="/PulsoCM/static/img/ACLA.png">
-                <p>ACLA</p>
-            </a>
-
-            <a href="https://www.cearamirim.rn.leg.br/" target="_blank">
-                <img src="/PulsoCM/static/img/camara.png">
-                <p>Câmara Municipal</p>
-            </a>
-
-            <a href="https://gibsonmachadocm.blogspot.com/" target="_blank">
-                <img src="/PulsoCM/static/img/blogger.png">
-                <p>Ceará-Mirim <br> Cultura e Arte</p>
-            </a> 
+        
+        <div class="bottom-footer">
+            <span id="copyright">
+                &copy 2025 Pulso da História CM - Todos os direitos reservados.
+            </span>
         </div>
-
-        <div class="a sobre">
-            <h3>Recursos</h3>
-
-            <ul>
-                <li>
-                    <a href="/PulsoCM/static/templates/politica.html">
-                        Políticas e Termos
-                    </a>
-                </li>
-            
-                <li>
-                    <a href="mailto: pulsodahistoriacm@gmail.com">
-                        Mande sua dúvida
-                    </a>
-                </li>
-                <li>
-                    <a href="/PulsoCM/static/templates/about.html">
-                        Sobre Nós
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    
-    <div class="bottom-footer">
-        <span id="copyright">
-            &copy 2025 Pulso da História CM - Todos os direitos reservados.
-        </span>
-    </div>
   </footer>
-  
+
+  <!-- Botão Voltar ao  Topo-->
+  <button id="btnTopo" onclick="voltarAoTopo()"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <!--SCRIPTS-->
+  <script src="/PulsoCM/static/javascript/scroll.js"></script>
   <script src="/PulsoCM/static/javascript/headerColorido.js"></script>
-  <script src="/PulsoCM/static/javascript/hamMenu.js"></script>
+  <script src="/PulsoCM/static/javascript/burguer.js"></script>
 </body>
 </html>

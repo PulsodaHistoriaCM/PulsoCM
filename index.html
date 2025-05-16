@@ -18,10 +18,11 @@
     <header id="header">
         <a class="empresa" href="index.html">
             <img id="logo" src="static/img/logo.png" alt="logo">
-            <p>Pulso da História CM</p>
+            <p id="nome">Pulso da História CM</p>
         </a>
 
-        <nav>
+        <!--DESKTOP-->
+        <nav id="desktop">
             <ul>
                 <li class="drop-hover"><a id="history" href="#">História <i class="fa-solid fa-caret-down"></i></a>
                     <div class="drop">
@@ -37,7 +38,15 @@
         </nav>
 
         <!--MOBILE-->
-        <div class="off-menu">
+        <div class="nav-mobile">
+            <div class="ham-menu" id="hamburguer">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="off-menu" id="menu">
             <ul>
                 <li><a href="static/templates/secaoCM.html">Conheça CM</a></li>
                 <li><a href="static/templates/secaoP.html">Personalidades</a></li>
@@ -46,16 +55,8 @@
                 <li><a href="static/templates/rotas.html">Rotas</a></li>
                 <li><a href="static/templates/about.html">Sobre Nós</a></li>
             </ul>
+            <a href="static/templates/login.html"><button>Login</button></a>
         </div>
-
-        <!--fazendo o sanduiche-->
-        <nav class="nav-mobile">
-            <div class="ham-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
 
         <a href="static/templates/login.html"><button>Login</button></a>
     </header>
@@ -105,7 +106,7 @@
         </div>
     </section>
 
-    <h2 id="frase">Descubra Ceará-Mirim: Tradição, cultura<br>e os verdes canavias esperam por você</h2>
+    <h2 id="frase">Descubra Ceará-Mirim:Tradição, cultura<br>e os verdes canavias esperam por você</h2>
 
     <main>
         <section class="poema">
@@ -122,13 +123,13 @@
         </section>
 
         <section class="artigos">
-            <h2 id="title">Artigos</h2>
+            <h2 class="title">Artigos</h2>
 
             <div class="cards">
                 <!--CARD 1-->
                 <div class="card one">
                     <img id="img1" src="static/img/rio.jpg" alt="Rio Ceará-Mirim">
-                    <a href="static/templates/artigosCM/art4.html">
+                    <a href="#"> <!--como tô apresentando cada artigo, vai direto pra lá. a seção de artigos em si fica pro veja mais-->
                         <p>Conheça a cidade >></p>
                     </a>
                     <p>Às margens do Rio Ceará-Mirim,<br>teve início a história da cidade.</p>
@@ -137,7 +138,7 @@
                 <!--CARD 2-->
                 <div class="card second">
                     <img id="img2" src="static/img/barao_e_baronesa.jpg" alt="Barão e Baronesa de CM">
-                    <a href="static/templates/artigosP/art.html">
+                    <a href="#">
                         <p>Personalidades >></p>
                     </a>
                     <p>Conheça Emanuel Varela e sua esposa, <br>um casal que marcou a história da cidade.</p>
@@ -146,7 +147,7 @@
                 <!--CARD 3-->
                 <div class="card third">
                     <img id="img3" src="static/img/trajano-emma.jpg" alt="Pintura túmulo de Emma">
-                    <a href="static/templates/artigosF/art5.html">
+                    <a href="#">
                         <p>Folclore >></p>
                     </a>
                     <p>O amor de Emma Thompson e Mar- <br>celo Barroca atravessou gerações.</p>
@@ -155,7 +156,7 @@
                 <!--CARD 4-->
                 <div class="card">
                     <img id="img4" src="static/img/timbo.jpg" alt="Casa Grande Timbó">
-                    <a href="static/templates/artigosCM/art5.html">
+                    <a href="#">
                         <p>Conheça a cidade >></p>
                     </a>
                     <p>Os verdes canaviais guardam as <br> memórias do período escravocrata.</p>
@@ -164,7 +165,7 @@
                 <!--CARD 5-->
                 <div class="card">
                     <img id="img5" src="static/img/nssenhora.png" alt="Padroeira da cidade">
-                    <a href="static/templates/artigosCM/art7.html">
+                    <a href="#">
                         <p>Conheça a cidade >></p>
                     </a>
                     <p>Nossa Senhora da Conceição, <br> a padroeira que guia Ceará-Mirim.</p>
@@ -173,7 +174,7 @@
                 <!--CARD 6-->
                 <div class="card">
                     <img id="img6" src="static/img/Ilha Bela casa grande.jpg" alt="Casa Grande Ilha Bela">
-                    <a href="static/templates/artigosE/art2.html">
+                    <a href="#">
                         <p>Engenhos da Memória >></p>
                     </a>
                     <p>No fim do século XIX, a Casa Grande <br> da Usina Ilha Bela teve sua glória.</p>
@@ -182,28 +183,27 @@
         </section>
 
         <section class="acesso">
-            <h2 id="title">Veja Mais</h2>
+            <h2 class="title">Veja Mais</h2>
 
-            <a href="static/templates/secaoCM.html"><button>Conheça a Cidade</button></a>
-            <a href="static/templates/secaoP.html"><button>Personalidades</button></a>
-            <a href="static/templates/secaoF.html"><button>Folclore</button></a>
-            <a href="static/templates/secaoE.html"><button>Engenhos</button></a>
+            <a href="static/templates/secaoCM.html" style="white-space: nowrap;"><button>Conheça a cidade</button></a>
+            <a href="static/templates/secaoP.html"><button id="menor3">Personalidades</button></a>
+            <a href="static/templates/secaoF.html"><button id="menor">Folclore</button></a>
+            <a href="static/templates/secaoE.html"><button id="menor2">Engenhos</button></a>
         </section>
 
         <section class="juvenal">
             <img src="static/img/poeta Juvenal Antunes.jpg" alt="Juvenal Antunes">
             <div class="texto">
                 <h2>Juvenal  Antunes de Oliveira</h2>
-                <p>Poeta consagrado no Acre e esquecido por sua cidade, conheça o boêmio <br> e sarcástico Juvenal Antunes.</p>
+                <p>Poeta consagrado no Acre e esquecido por sua cidade, conheça o <br> boêmio e sarcástico Juvenal Antunes.</p>
                 <a href="static/templates/artigosP/art7.html">Leia mais aqui >></a>
             </div>
         </section>
 
         <section class="rotas">
-            <h2 id="title">Rotas Únicas, Experiências Memoráveis</h2>
-
+            <h2 class="title">Rotas Únicas, Experiências Memoráveis</h2>
             <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1dbG8RLl-xm8Ql0HrbcJ3FKfVXx1xlEM&ehbc=2E312F" width="640" height="480"></iframe>
-            <a href="static/templates/rotas.html"><button>Veja mais Aqui</button></a>
+            <a href="static/templates/rotas.html" style="white-space: nowrap;">Veja mais Aqui</a>
         </section>
 
         <section class="saude">
@@ -282,6 +282,6 @@
     <script src="static/javascript/slider.js"></script>
     <script src="static/javascript/scroll.js"></script>
     <script src="static/javascript/voltar.js"></script>
-    <script src="static/javascript/hamMenu.js"></script>
+    <script src="static/javascript/burguer.js"></script>
 </body>
 </html>

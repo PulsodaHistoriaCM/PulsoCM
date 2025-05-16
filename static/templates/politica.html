@@ -15,8 +15,8 @@
     
     <title>Política de Privacidade</title>
 
-<style>
-    main{
+    <style>
+        main{
             padding: 50px;
         }
 
@@ -31,17 +31,24 @@
             padding-bottom: 20px;
             font-size: 17px;
         }
-</style>
+
+        @media (max-width: 480px) {
+            main{
+                padding: 20px;
+            }
+        }
+    </style>
 
 </head>
 
 <body>
     <header id="header">
         <a class="empresa" href="/PulsoCM/index.html">
-            <img id="logo" src="/PulsoCM/static/img/logo.png" alt="logo">
+            <img id="logo" src="/static/img/logo.png" alt="logo">
             <p>Pulso da História CM</p>
         </a>
 
+        <!--DESKTOP-->
         <nav>
             <ul>
                 <li class="drop-hover"><a id="history" href="#">História <i class="fa-solid fa-caret-down"></i></a>
@@ -156,6 +163,11 @@
         </div>
     </footer>
 
+    <!-- Botão Voltar ao  Topo-->
+    <button id="btnTopo" onclick="voltarAoTopo()"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <!--SCRIPTS-->
+    <script src="/PulsoCM/static/javascript/scroll.js"></script>
     <script src="/PulsoCM/static/javascript/headerColorido.js"></script>
-    <script src="/PulsoCM/static/javascript/hamMenu.js"></script>
+    <script src="/PulsoCM/static/javascript/burguer.js"></script>
 </body>

@@ -219,18 +219,41 @@
             height: 250px !important;
         }
     }
+
+    /*main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+
+        #chartContainer{
+            width: 90%;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        @media screen and (max-width: 480px){
+            main  h1{
+                text-align: center;
+                font-size: 30px;
+            }
+        }*/
 </style>
 
 </head>
 
 <body>
     <header id="header">
-        <a class="empresa" href="/PulsoCM/static/templates/logado.html">
+        <a class="empresa" href="/PulsoCM/static/templates/home.html">
             <img id="logo" src="/PulsoCM/static/img/logo.png" alt="logo">
-            <p>Pulso da História CM</p>
+            <p id="nome">Pulso da História CM</p>
         </a>
 
-        <nav>
+        <!--DESKTOP-->
+        <nav id="desktop">
             <ul>
                 <li class="drop-hover"><a id="history" href="#">História <i class="fa-solid fa-caret-down"></i></a>
                     <div class="drop">
@@ -241,34 +264,34 @@
                 </li>
                 <li><a href="/PulsoCM/static/templates/secaoE.html">Engenhos</a></li>
                 <li><a href="/PulsoCM/static/templates/rotas.html">Rotas</a></li>
-                <li><a href="/PulsoCM/static/templates/chat.html">Chat</a></li>
-                <li><a href="/PulsoCM/static/templates/saude.html">Saúde</a></li>
+                <li><a href="/PulsoCM/static/templates/about.html">Sobre Nós</a></li>
             </ul>
         </nav>
 
         <!--MOBILE-->
-        <div class="off-menu">
-            <ul>
-                <li><a href="static/templates/secaoCM.html">Conheça CM</a></li>
-                <li><a href="static/templates/secaoP.html">Personalidades</a></li>
-                <li><a href="static/templates/secaoF.html">Folclore</a></li>
-                <li><a href="static/templates/secaoE.html">Engenhos</a></li>
-                <li><a href="static/templates/rotas.html">Rotas</a></li>
-                <li><a href="static/templates/about.html">Sobre Nós</a></li>
-            </ul>
-        </div>
-
-        <!--fazendo o sanduiche-->
-        <nav class="nav-mobile">
-            <div class="ham-menu">
+        <div class="nav-mobile">
+            <div class="ham-menu" id="hamburguer">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-        </nav>
+        </div>
 
-        <!--aqui fica o nome do usuário-->
-        <a href="/PulsoCM/static/templates/login.html"><button>Sair</button></a> <!--botão de sair, ver outro formato-->
+        <!--aqui fica o nome do usuário logado-->
+        <div class="off-menu" id="menu">
+            <ul>
+                <li><a href="/PulsoCM/static/templates/secaoCM.html">Conheça CM</a></li>
+                <li><a href="/PulsoCM/static/templates/secaoP.html">Personalidades</a></li>
+                <li><a href="/PulsoCM/static/templates/secaoF.html">Folclore</a></li>
+                <li><a href="/PulsoCM/static/templates/secaoE.html">Engenhos</a></li>
+                <li><a href="/PulsoCM/static/templates/rotas.html">Rotas</a></li>
+                <li><a href="/PulsoCM/static/templates/about.html">Sobre Nós</a></li>
+            </ul>
+            <a href="/PulsoCM/static/templates/login.html"><button>Login</button></a>
+        </div>
+
+        <!--aqui fica o nome do usuário logado-->
+        <a href="/PulsoCM/static/templates/login.html"><button>Login</button></a>
     </header>
 
     <main>
@@ -302,8 +325,6 @@
                     <td>92</td>
                 </tr>
             </table>
-
-            
 
             <!-- Adiciona o botão abaixo do gráfico -->
             <canvas id="weeklyChart" width="400" height="200"></canvas>
@@ -489,7 +510,12 @@
         </div>
     </footer>
 
+    <!-- Botão Voltar ao  Topo-->
+    <button id="btnTopo" onclick="voltarAoTopo()"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <!--SCRIPTS-->
+    <script src="/PulsoCM/static/javascript/scroll.js"></script>
     <script src="/PulsoCM/static/javascript/headerColorido.js"></script>
-    <script src="/PulsoCM/static/javascript/hamMenu.js"></script>
+    <script src="/PulsoCM/static/javascript/burguer.js"></script>
 </body>
 </html>

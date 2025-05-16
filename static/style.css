@@ -1,10 +1,12 @@
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
     font-family: 'Nunito  Sans', sans-serif;
 }
 
 html{
+    overflow-x: hidden;
     scroll-behavior: smooth;
 }
 
@@ -12,6 +14,7 @@ body{
     width: 100%;
     height: 100%;
     background-color: #f3fadc;
+    overflow-x: hidden;
 }
 
 .empresa{
@@ -33,7 +36,7 @@ header{
     position: fixed;
     top: 0;
     z-index: 1;
-    width: 95%;
+    width: 100%;
 }
 
 header.rolagem{
@@ -55,13 +58,12 @@ header nav ul{
     gap: 40px;
     font-size: 15px;
     padding-top: 15px;
-    transform: translateX(-30%);
 }
 
 header nav ul li a{
     display: block;
     color: #fff;
-    /*text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);*/
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
 }
 
 .drop-hover{
@@ -115,12 +117,17 @@ header nav ul li a:hover{
     color: #7cc644; 
 }
 
+.off-menu{
+    display: none;
+}
+
 a{
     text-decoration: none;
     color: #050505;
 }
 
 header button{
+    margin-top: 5px;
     padding: 12px;
     border-radius: 19px;
     border: none;
@@ -151,7 +158,7 @@ header button:hover{
 .slider{
     margin: 0 auto;
     width: 100%; 
-    height: 607px; 
+    height: 633px !important; 
     overflow: hidden;
 }
 
@@ -175,13 +182,12 @@ header button:hover{
 }
 
 .manual-navegacao{
-    position: absolute;
-    width: 800px;
+    position: sticky; /*absolute deu problema no mobile*/
+    width: 676px;
     bottom: 30px;
     display: flex;
     justify-content: center;
     background: none;
-    transform: translateX(35.5%);
 }
 
 .manual-btn{
@@ -229,7 +235,6 @@ header button:hover{
     cursor: pointer;
     transition: .1s;
     background-color: transparent;
-    transform: translateX(45%);
 }
 
 .navegacao{
@@ -276,7 +281,7 @@ header button:hover{
 }
 
 /*ARTIGOS*/
-#title{
+.title{
     margin-top: 100px;
     margin-bottom: 100px;
     text-align: center;
@@ -324,16 +329,27 @@ header button:hover{
 }
 
 /*ACESSO*/
-.acesso button{
+.acesso {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.acesso a {
+    margin: 70px;
+    display: inline-block;
+}
+
+.acesso button {
     background-color: #7cc644;
     border: 1px solid gray;
     border-radius: 10px;
     padding: 20px 30px;
-    margin-left: 12%;
-    margin-bottom: 100px;
+    margin-top: -150px;
+    margin-right: 30px;
 }
 
-.acesso button:hover{
+.acesso button:hover {
     background-color: #75bd2e;
     cursor: pointer;
 }
@@ -347,23 +363,24 @@ header button:hover{
 
 .juvenal img{
     width: 20%;
-    height: 90%;
+    height: auto;
     border-radius: 50%;
     margin-top: 25px;
-    margin-left: 150px;
+    margin-bottom: 25px;
+    margin-left: 150px !important;
 }
 
 .juvenal .texto{
-    padding-top: 100px;
-    padding-left: 130px;
+    padding-top: 80px;
 }
 
 .juvenal .texto h2{
     font-size: 35px;
+    padding-bottom: 25px;
 }
 
 .juvenal .texto p{
-    padding-bottom: 15px;
+    padding-bottom: 30px;
     font-size: 20px;
 }
 
@@ -379,88 +396,29 @@ header button:hover{
 
 /*ROTAS*/
 .rotas iframe{
-    transform: translateX(16%);
+    margin: 0 auto;
+    margin-bottom: -5px;
     width: 77%;
+    border: 0;
 }
 
-.rotas a button{
-    padding: 20px 477px;
-    margin-top: -6px;
-    margin-left: 167px;
+.rotas a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    margin-left: 177px;
+    margin-right: 134px;
+    font-size: 15px;
+    font-family: 'Nunito sans', sans-serif;
     background: #fff;
     border: 1px solid rgb(199, 198, 198);
 }
 
-.rotas a button:hover{
+.rotas a:hover{
     background: #f5f5f5;
     cursor: pointer;
-}
-
-/*CHAT*/
-.destaques {
-    width: 77%;
-    height: 250px;
-    display: flex;
-    gap: 35px;
-    align-items: center;
-    align-content: center;
-    margin-left: 170px;
-} 
-
-.destaque {
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 15px;
-    box-shadow: 0px 0px 20px 0px rgba(92, 115, 160, 0.07);
-    padding: 34px;
-    border-radius: 12px;
-}
-
-.destaque:hover{
-    transform: translateY(-5%);
-}
-
-#heart{
-    font-size: 20px;
-}
-
-#heart:hover{
-    cursor: pointer;
-}
-
-.testimonial{
-    text-align: justify;
-    font-size: 16px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
-
-.user{
-    display: flex;
-    align-items: center;
-}
-
-.user h3{
-    font-weight: 600;
-    font-size: 13px;
-    color: #111928;
-}
-
-.user p{
-    padding-left: 100px;
-    font-size: 12px;
-    color: #8899a8;
-}
-
-.chat a{
-    font-size: 12px;
-    color: rgb(109, 108, 108);
-}
-
-.chat a:hover{
-    text-decoration: underline;
 }
 
 /*SAUDE*/
@@ -469,19 +427,17 @@ header button:hover{
     display: flex;
     margin-top: 100px;
     margin-bottom: 50px;
-    gap: 50px;
+    gap: 100px;
     background-color: #8ac44f;
-    padding: 30px 150px;
 }
 
 .saude img{
     width: 35%;
     border-radius: 35px;
-    padding-left: 20px;
 }
 
 .saude .texto{
-    padding-top: 50px;
+    padding-top: 20px;
 }
 
 .texto h2{
@@ -497,7 +453,7 @@ header button:hover{
 
 .texto a button{
     padding: 5px 50px;
-    transform: translateX(200px);
+    transform: translateX(180px) !important;
     background: #fff;
     border: 1px solid gray;
     border-radius: 15px;
@@ -514,7 +470,7 @@ footer {
     background-color: #7cc644;
 }
   
-.content{
+footer .content{
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -522,24 +478,25 @@ footer {
     gap: 20px;
 }
  
-.a{
+footer  .a{
     flex: 1;
     max-width: 400px; 
 }
   
 #frase-cta{
     margin: 50px 0px;
-    margin-left: 150px;
+    margin-left: 140px;
 }
 
-.links{
+footer .links{
+    margin-left: 12px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px 30px;
     justify-content: center;
 }
   
-.links a{
+footer .links a{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -549,20 +506,25 @@ footer {
     text-align: center;
 }
   
-.links img {
+footer .links img {
     width: 45px;
     margin-bottom: 5px;
 }
   
-.links a:hover {
+footer .links a:hover {
     color: #3d550c;
 }
 
-.sobre h3{
+footer .sobre{
+    margin-left: 115px;
+    margin-right: -100px;
+}
+
+footer .sobre h3{
     padding-bottom: 20px;
 }
   
-.sobre ul {
+footer .sobre ul {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -571,21 +533,21 @@ footer {
     gap: 20px;
 }
   
-.sobre a {
+footer .sobre a {
     text-decoration: none;
     color: black;
 }
   
-.sobre a:hover {
+footer .sobre a:hover {
     text-decoration: underline;
 }
 
-.bottom-footer{
+footer .bottom-footer{
     background-color: #8ac44f;
     padding: 20px 20px;
 }
   
-#copyright{
+footer .bottom-footer #copyright{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -612,8 +574,6 @@ footer {
 #btnTopo:hover {
     background-color: #75bd2e; 
 }
-
-/*RESPONSIVIDADE*/
 
 @media (max-width: 1600px) {
     header button{
@@ -670,82 +630,260 @@ footer {
 }
 
 /*MOBILE*/
+@media screen and (max-width: 320px) {
+    #desktop,
+    #nome,
+    header button{
+        display: none;
+    }
 
-/*@media screen and (max-width: 320px)*/
-
-@media (max-width: 780px) {
-    /*fazendo menu hamburguer*/
-    .off-menu{
-        background-color: #75bd2e;
-        height: 50vh;
+    html, body {
         width: 100%;
-        max-width: 80%;
+    }
+   
+    .off-menu button {
+        display: block;
+    }
+
+    header {
+        width: 100%;
+        padding: 10px !important; 
+    }
+
+    #logo{
+        width: 45%;
+        margin-top: -1px;
+    }
+
+    /*fazendo menu hamburguer*/
+    .off-menu {
+        background-color: #75bd2e;
+        height: 40%;
+        width: 58%;
         position: fixed;
         top: 0;
-        right: -80%;
+        left: -100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
-        transition: .3s ease;
     }
 
-    .off-menu .ativado{
-        right: 0;
+    .off-menu.ativado {
+        left: 62px;
+        top: 10px;
     }
 
-    .nav-mobile{
-        padding: 1rem;
+    .off-menu ul li{
+        list-style: none;
+        padding: 3px;
+    }
+
+    header button{
+        color: #050505;
+    }
+
+    .nav-mobile {
+        padding: 2px 5px;
         display: flex;
         background-color: #75bd2e;
+        position: fixed;
+        left: 250px;
     }
 
-    .ham-menu{
-        height: 50px;
+    .ham-menu {
+        height: 38px;
         width: 50px;
         margin-left: auto;
         position: relative;
+        cursor: pointer;
     }
 
-    .ham-menu span{
+    .ham-menu span {
         height: 5px;
         width: 100%;
         background-color: #7cc644;
         border-radius: 25px;
         position: absolute;
-        top: 50%;
         left: 50%;
-        transform: translate(-50px, -50px);
-        transition: .3s ease;
+        transform: translateX(-50%);
+        transition: 0.3s ease;
     }
 
-    .ham-menu span:nth-child(1){
-        top: 25%;
+    /*posicao span*/
+    .ham-menu span:nth-child(1) {
+        top: 7px;
     }
 
-    .ham-menu span:nth-child(3){
-        top: 75%;
+    .ham-menu span:nth-child(2) {
+        top: 17px;
     }
 
-    /*mudar posições depois*/
-    .ham-menu.ativado span:nth-child(1){
-        top: 50%;
-        transform: translate(-50px, -50px) rotate(45deg);
+    .ham-menu span:nth-child(3) {
+        top: 27px;
     }
 
-    .ham-menu.ativado span:nth-child(3){
-        top: 50%;
-        transform: translate(-50px, -50px) rotate(-45deg);
+    /*posicao x quando menu está ativado*/
+    .ham-menu.ativado span:nth-child(1) {
+        transform: translateX(-50%) rotate(45deg);
+        top: 17px;
     }
 
-    /*.footer-container {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+    .ham-menu.ativado span:nth-child(2) {
+        opacity: 0;
     }
-  
-    .links {
-      grid-template-columns: 1fr 1fr;
-    }*/
+
+    .ham-menu.ativado span:nth-child(3) {
+        transform: translateX(-50%) rotate(-45deg);
+        top: 17px;
+    }
+
+    #frase{
+        font-size: 27px;
+        text-align: center;
+    }
+
+    .slider{
+        height: 780px !important;
+    }
+
+    .slide img{
+        object-fit: cover;
+        height: 781px;
+    }
+
+    .cards{
+        margin-left: 0px;
+        justify-content: space-between;
+    }
+
+    .card{
+        width: 100%;
+        font-size: 16.5px;
+    }
+
+    .one, .second, .third{
+        margin-bottom: 0;
+    }
+
+    .card img{
+        width: 80%;
+        object-fit: cover;
+    }
+
+    .acesso h2{
+        margin-bottom: 50px;
+    }
+
+    .acesso a{
+        margin: 30px;
+        margin-left: -5px;
+    }
+
+    .acesso button{
+        padding: 20px 69px;
+    }
+
+    #menor{
+        padding-left: 100px !important;
+        padding-right: 100px !important;
+    }
+
+    #menor2{
+        padding-left: 95px !important;
+        padding-right: 95px !important;
+    }
+
+    #menor3{
+        padding-left: 77px !important;
+        padding-right: 76px !important;
+    }
+
+    .juvenal{
+        flex-direction: column;
+        height: 625px;
+    }
+
+    .juvenal img{
+        width: 80%;
+        object-fit: cover;
+        margin: 0 auto !important;
+        margin-top: 30px !important;
+    }
+
+    .juvenal .texto h2{
+        font-size: 30px;
+        text-align: center;
+        margin-left: -165px;
+        margin-top: -50px;
+        padding-bottom: 5px;
+    }
+
+    .juvenal .texto p{
+        margin-left: -160px;
+        padding-right: 10px;
+        padding-bottom: 20px;
+        font-size: 17px;
+    }
+
+    .juvenal .texto a{
+        margin-left: -160px;
+    }
+
+    .rotas a{
+        margin-left: 41px;
+        margin-right: 32px;
+    }
+
+    .saude{
+        flex-direction: column;
+        gap: 0;
+        height: 500px;
+        padding: 10px;
+    }
+
+    .saude img{
+        width: 80%;
+        margin-top: 20px !important;
+        margin: 0 auto;
+        object-fit: cover;
+    }
+
+     .saude .texto h2{
+        font-size: 22px;
+    }
+
+    .saude .texto p{
+        padding-top: 20px;
+        padding-bottom: 25px;
+    }
+
+    .saude .texto a button{
+        padding: 10px 50px;
+        transform: translateX(50px) !important;
+    }
+
+    footer .content{
+        flex-direction: column;
+    }
+
+    #frase-cta{
+        margin-left: 0;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 30px;
+    }
+
+    footer .sobre{
+        margin-left: 0;
+        margin: 0 auto;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    footer .bottom-footer #copyright{
+        font-size: 9.7px;
+    }
   }
