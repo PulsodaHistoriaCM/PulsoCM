@@ -148,61 +148,61 @@
         </section>
 
         <section class="artigos">
-            <h2 id="title">Artigos</h2>
+            <h2 class="title">Artigos</h2>
 
             <div class="cards">
                 <!--CARD 1-->
                 <div class="card one">
-                    <img id="img1" src="/PulsoCM/static/img/rio.jpg" alt="Rio Ceará-Mirim">
-                    <a href="/PulsoCM/static/templates/artigosCM/art4.html"> 
+                    <img id="img1" src="static/img/rio.jpg" alt="Rio Ceará-Mirim">
+                    <a href="#"> <!--como tô apresentando cada artigo, vai direto pra lá. a seção de artigos em si fica pro veja mais-->
                         <p>Conheça a cidade >></p>
                     </a>
-                    <p>Às margens do Rio Ceará-Mirim,<br>teve início a história da cidade.</p>
+                    <p class="legenda">Às margens do Rio Ceará-Mirim,<br class="brA"> teve início a história da cidade.</p>
                 </div>
 
                 <!--CARD 2-->
                 <div class="card second">
-                    <img id="img2" src="/PulsoCM/static/img/barao_e_baronesa.jpg" alt="Barão e Baronesa de CM">
-                    <a href="/PulsoCM/static/templates/artigosP/art.html">
+                    <img id="img2" src="static/img/barao_e_baronesa.jpg" alt="Barão e Baronesa de CM">
+                    <a href="#">
                         <p>Personalidades >></p>
                     </a>
-                    <p>Conheça Emanuel Varela e sua esposa, <br>um casal que marcou a história da cidade.</p>
+                    <p class="legenda">Conheça Emanuel Varela e sua esposa, um casal que marcou a história da cidade.</p>
                 </div>
 
                 <!--CARD 3-->
                 <div class="card third">
-                    <img id="img3" src="/PulsoCM/static/img/trajano-emma.jpg" alt="Pintura túmulo de Emma">
-                    <a href="/PulsoCM/static/templates/artigosF/art5.html">
+                    <img id="img3" src="static/img/trajano-emma.jpg" alt="Pintura túmulo de Emma">
+                    <a href="#">
                         <p>Folclore >></p>
                     </a>
-                    <p>O amor de Emma Thompson e Mar- <br>celo Barroca atravessou gerações.</p>
+                    <p class="legenda">O amor de Emma Thompson e Marcelo Barroca atravessou gerações.</p>
                 </div>
 
                 <!--CARD 4-->
                 <div class="card">
-                    <img id="img4" src="/PulsoCM/static/img/timbo.jpg" alt="Casa Grande Timbó">
-                    <a href="/PulsoCM/static/templates/artigosCM/art5.html">
+                    <img id="img4" src="static/img/timbo.jpg" alt="Casa Grande Timbó">
+                    <a href="#">
                         <p>Conheça a cidade >></p>
                     </a>
-                    <p>Os verdes canaviais guardam as <br> memórias do período escravocrata.</p>
+                    <p class="legenda">Os verdes canaviais guardam as <br class="brA"> memórias do período escravocrata.</p>
                 </div>
 
                 <!--CARD 5-->
                 <div class="card">
-                    <img id="img5" src="/PulsoCM/static/img/nssenhora.png" alt="Padroeira da cidade">
-                    <a href="/PulsoCM/static/templates/artigosCM/art7.html">
+                    <img id="img5" src="static/img/nssenhora.png" alt="Padroeira da cidade">
+                    <a href="#">
                         <p>Conheça a cidade >></p>
                     </a>
-                    <p>Nossa Senhora da Conceição, <br> a padroeira que guia Ceará-Mirim.</p>
+                    <p class="legenda">Nossa Senhora da Conceição, <br class="brA"> a padroeira que guia Ceará-Mirim.</p>
                 </div>
 
                 <!--CARD 6-->
                 <div class="card">
-                    <img id="img6" src="/PulsoCM/static/img/Ilha Bela casa grande.jpg" alt="Casa Grande Ilha Bela">
-                    <a href="/PulsoCM/static/templates/artigosE/art2.html">
+                    <img id="img6" src="static/img/Ilha Bela casa grande.jpg" alt="Casa Grande Ilha Bela">
+                    <a href="#">
                         <p>Engenhos da Memória >></p>
                     </a>
-                    <p>No fim do século XIX, a Casa Grande <br> da Usina Ilha Bela teve sua glória.</p>
+                    <p class="legenda">No fim do século XIX, a Casa Grande da Usina Ilha Bela teve sua glória.</p>
                 </div>
             </div>
         </section>
@@ -362,6 +362,26 @@
     <script src="/PulsoCM/static/javascript/voltar.js"></script>
     <script src="/PulsoCM/static/javascript/headerColorido.js"></script>
     <script src="/PulsoCM/static/javascript/burguer.js"></script>
+
+    <script>
+        function removeBr() {
+            const brTag = document.querySelectorAll(".brA");
+            
+            brTag.forEach(br => {
+                if (window.innerWidth >= 780 && window.innerWidth <= 1365) {
+                    br.style.display = 'none';
+                } else {
+                    br.style.display = 'inline';
+                }
+            });
+        }
+
+        // Executa ao carregar a página
+        window.addEventListener('load', removeBr);
+
+        // Executa ao redimensionar a janela
+        window.addEventListener('resize', removeBr);
+    </script>
     
     <!--do chat-->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> 
