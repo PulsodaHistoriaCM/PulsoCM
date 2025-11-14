@@ -19,7 +19,7 @@
 <body>
     <main>
         <div class="forms-login">
-            <form action="#">
+            <form id="login-form">
                 <h1>Login</h1>
 
                 <div class="input-group">
@@ -40,7 +40,6 @@
 
                 <!--fazendo a página home logado aparecer após 2seg-->
                 <p id="mensagem" style="display: none;">Aguarde...</p> 
-
                 <script src="/PulsoCM/static/javascript/delay.js"></script>
                 <!--fim codigo do delay-->
                 
@@ -62,56 +61,52 @@
      <!-- //Adicionar Firebase SDK -->
      <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
      <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+     
      <script>
          // Configuração do Firebase
          const firebaseConfig = {
-            apiKey: "AIzaSyAAClL4iZKFciDoS8VZvE5x1lHGnXi2b7Q",
-            authDomain: "pulso-da-historia-cm-f77ca.firebaseapp.com",
-            projectId: "pulso-da-historia-cm-f77ca",
-            storageBucket: "pulso-da-historia-cm-f77ca.appspot.com",
-            messagingSenderId: "728038290374",
-            appId: "1:728038290374:web:cf0a166cdcbd5de09678c7"
+            apiKey: "AIzaSyCMCR42h8ZM4ao4D5MSTZkg99PIhspSAZE",
+            authDomain: "pulso-da-historia.firebaseapp.com",
+            databaseURL: "https://pulso-da-historia-default-rtdb.firebaseio.com",
+            projectId: "pulso-da-historia",
+            storageBucket: "pulso-da-historia.appspot.com",
+            messagingSenderId: "285634655113",
+            appId: "1:285634655113:web:7e97210e9c6b2878d96758"
         };
         
- 
          //Firebase
          firebase.initializeApp(firebaseConfig);
- 
  
          // identificação do formulário de login e  mensagem de erro ou de sucesso
          const loginForm = document.getElementById('login-form');
          const messageDiv = document.getElementById('message');
- 
+         const mensagemAguarde = document.getElementById('mensagem');
  
          loginForm.addEventListener('submit', (e) => {
              e.preventDefault();
  
- 
-             const email = document.getElementById('email').value;
+             const email = document.getElementById('email').value.trim();
              const password = document.getElementById('password').value;
  
- 
-             // Autenticação a
+             mensagemAguarde.style.display = 'block';
+             messageDiv.textContent = '';
+
              firebase.auth().signInWithEmailAndPassword(email, password)
-                 .then((userCredential) => {
-                     // Login com sucesso
-                     const user = userCredential.user;
-                     console.log('Login realizado com sucesso:', user);
-                     messageDiv.style.color = 'green';
-                     messageDiv.textContent = 'Login realizado com sucesso!';
-                     // ir a página
-                     setTimeout(() => {
-                         window.location.href = "/templates/logado.html"; // Coloque a URL da sua página inicial
-                     }, 2000);
-                 })
-                 .catch((error) => {
-                     const errorCode = error.code;
-                     const errorMessage = error.message;
-                     console.error('Erro no login:', errorCode, errorMessage);
-                     // mensagem erro
-                     messageDiv.style.color = 'red';
-                     messageDiv.textContent = 'Erro no login: ' + errorMessage;
-                 });
+                .then(userCredential => {
+                    const user = userCredential.user;
+                    console.log('Login realizado com sucesso:', user);
+                    messageDiv.style.color = 'green';
+                    messageDiv.textContent = 'Login realizado com sucesso! Redirecionando...';
+
+                    setTimeout(() => {
+                        window.location.href = "/templates/logado.html";
+                    }, 2000);
+                })
+                .catch(error => {
+                    mensagemAguarde.style.display = 'none';
+                    messageDiv.style.color = 'red';
+                    messageDiv.textContent = 'Erro no login: ' + error.message;
+                });
          });
      </script>
 </body>

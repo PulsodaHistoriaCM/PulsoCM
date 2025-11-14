@@ -109,10 +109,94 @@
                 </div>
             </div>
 
-            <button type="submit">Continuar</button>
+            <button type="submit">Cadastrar</button>
+            <div id="mensagemErro" style="color: red;"></div>
         </form>
     </main>
 
     <script src="/PulsoCM/static/javascript/cadastro.js"></script>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+    <script>
+        const firebaseConfig = {
+        apiKey: "AIzaSyCMCR42h8ZM4ao4D5MSTZkg99PIhspSAZE",
+        authDomain: "pulso-da-historia.firebaseapp.com",
+        projectId: "pulso-da-historia",
+        storageBucket: "pulso-da-historia.appspot.com",
+        messagingSenderId: "285634655113",
+        appId: "1:285634655113:web:7e97210e9c6b2878d96758"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+        async function cadastrarUsuario(email, senha, dadosExtras) {
+        const userCredential = await auth.createUserWithEmailAndPassword(email, senha);
+        const user = userCredential.user;
+
+        await user.updateProfile({
+        displayName: dadosExtras.nome
+        });
+    
+        await db.collection("usuarios").doc(user.uid).set({
+        ...dadosExtras,
+        criadoEm: new Date()
+        });
+        }
+
+        function mostrarErro(mensagem) {
+        const erroDiv = document.getElementById("mensagemErro");
+        erroDiv.textContent = mensagem;
+        }
+    
+        document.getElementById("cadastro-form").addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const nome = document.getElementById("nome").value.trim();
+        const nascimento = document.getElementById("dataNascimento").value;
+        const email = document.getElementById("email").value.trim();
+        const celular = document.getElementById("phone").value.trim();
+        const celularEmergencia = document.getElementById("phoneEmergencia").value.trim();
+        const endereco = document.getElementById("endereco").value.trim();
+        const sangue = document.getElementById("sangue").value.trim();
+        const alergia = document.getElementById("alergia").value.trim();
+        const senha = document.getElementById("senha").value;
+        const confirmeSenha = document.getElementById("confirmeSenha").value;
+        const genero = document.querySelector('input[name="gender"]:checked')?.id || "";
+        const cardiaco = document.querySelector('input[name="cardiaco"]:checked')?.value || "não";
+
+        if (!email.includes('@') || senha.length < 6) {
+            mostrarErro("Email inválido ou senha muito curta.");
+            return;
+        }
+
+        if (senha !== confirmeSenha) {
+            mostrarErro("As senhas não coincidem.");
+            return;
+        }
+
+        try {
+            await cadastrarUsuario(email, senha, {
+            nome, nascimento, email, celular,
+            celularEmergencia, endereco, sangue,
+            alergia, genero, cardiaco
+            });
+            alert("Cadastro realizado com sucesso!");
+            window.location.href = "/templates/logado.html";
+        } catch (error) {
+            const erros = {
+            "auth/email-already-in-use": "Este email já está em uso.",
+            "auth/invalid-email": "Email inválido.",
+            "auth/weak-password": "Senha fraca, use pelo menos 6 caracteres."
+            };
+            mostrarErro(erros[error.code] || "Erro ao cadastrar: " + error.message);
+        }
+        });
+    </script>
 </body>
 </html>

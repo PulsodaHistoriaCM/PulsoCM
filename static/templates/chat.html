@@ -1,31 +1,26 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/static/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/static/home.css">
+    <link rel="stylesheet" href="/static/chat.css">
 
-  <link rel="shortcut icon" href="/PulsoCM/static/img/logo.png" type="image/x-icon">
-  <link rel="stylesheet" href="/PulsoCM/static/chat.css">
-  <link rel="stylesheet" href="/PulsoCM/static/style.css">
-  
-  <title>Comunidade Pulso CM</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-
-  <!-- Firebase SDKs -->
-  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    
+    <title>Chat</title>
 </head>
 
 <body>
-  <header id="header">
-        <a class="empresa" href="/PulsoCM/index.html">
-            <img id="logo" src="/PulsoCM/static/img/logo.png" alt="logo">
+    <header id="header">
+        <a class="empresa" href="/templates/home.html">
+            <img id="logo" src="/static/img/logo.png" alt="logo">
             <p id="nome">Pulso da História CM</p>
         </a>
 
@@ -34,16 +29,15 @@
             <ul>
                 <li class="drop-hover"><a id="history" href="#">História <i class="fa-solid fa-caret-down"></i></a>
                     <div class="drop">
-                        <a href="/PulsoCM/static/templates/secaoCM.html">Conheça CM</a>
-                        <a href="/PulsoCM/static/templates/secaoP.html">Personalidades</a>
-                        <a href="/PulsoCM/static/templates/secaoF.html">Folclore</a>
+                        <a href="/templates/secaoCM.html">Conheça CM</a>
+                        <a href="/templates/secaoP.html">Personalidades</a>
+                        <a href="/templates/secaoF.html">Folclore</a>
                     </div>
                 </li>
-                <li><a href="/PulsoCM/static/templates/secaoE.html">Engenhos</a></li>
-                <li><a href="/PulsoCM/static/templates/rotas.html">Rotas</a></li>
-                <li><a href="/PulsoCM/static/templates/saude.html">Saúde</a></li>
-                <li><a href="/PulsoCM/static/templates/chat.html">Chat</a></li>
-                <li><a href="/PulsoCM/static/templates/about.html">Sobre Nós</a></li>
+                <li><a href="/templates/secaoE.html">Engenhos</a></li>
+                <li><a href="/templates/rotas.html">Rotas</a></li>
+                <li><a href="static/templates/saude.html">Saúde</a></li>
+                <li><a href="/templates/about.html">Sobre Nós</a></li>
             </ul>
         </nav>
 
@@ -56,183 +50,192 @@
             </div>
         </div>
 
+        <!--aqui fica o nome do usuário logado-->
         <div class="off-menu" id="menu">
             <ul>
-                <li><a href="/PulsoCM/static/templates/secaoCM.html">Conheça CM</a></li>
-                <li><a href="/PulsoCM/static/templates/secaoP.html">Personalidades</a></li>
-                <li><a href="/PulsoCM/static/templates/secaoF.html">Folclore</a></li>
-                <li><a href="/PulsoCM/static/templates/secaoE.html">Engenhos</a></li>
-                <li><a href="/PulsoCM/static/templates/rotas.html">Rotas</a></li>
-                <li><a href="/PulsoCM/static/templates/saude.html">Saúde</a></li>
-                <li><a href="/PulsoCM/static/templates/chat.html">Chat</a></li>
-                <li><a href="/PulsoCM/static/templates/about.html">Sobre Nós</a></li>
+                <li><a href="/templates/secaoCM.html">Conheça CM</a></li>
+                <li><a href="/templates/secaoP.html">Personalidades</a></li>
+                <li><a href="/templates/secaoF.html">Folclore</a></li>
+                <li><a href="/templates/secaoE.html">Engenhos</a></li>
+                <li><a href="/templates/rotas.html">Rotas</a></li>
+                <li><a href="static/templates/saude.html">Saúde</a></li>
+                <li><a href="/templates/about.html">Sobre Nós</a></li>
             </ul>
-            <a href="/PulsoCM/static/templates/login.html"><button>Login</button></a>
+    </header>
+
+    <div class="chat-container">
+      <div class="side-image">
+        <p class="sugestao" id="sugestaoTexto"> Descubra a história da nossa Biblioteca</p>
+      </div>
+
+      <div class="chat-box" id="chatBox">
+        <!-- Mensagens aparecem aqui -->
+      </div>
+
+      <div class="input-container">
+        <input type="text" id="userInput" placeholder="Compartilhe sua experiência ou dica!" required />
+        <button onclick="enviarMensagem()">Enviar</button>
+      </div>
+    </div>
+
+  <!-- Firebase compat libs -->
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyCMCR42h8ZM4ao4D5MSTZkg99PIhspSAZE",
+    authDomain: "pulso-da-historia.firebaseapp.com",
+    databaseURL: "https://pulso-da-historia-default-rtdb.firebaseio.com",
+    projectId: "pulso-da-historia",
+    storageBucket: "pulso-da-historia.appspot.com",
+    messagingSenderId: "285634655113",
+    appId: "1:285634655113:web:7e97210e9c6b2878d96758"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+
+  let nomeUsuario = "Anônimo";
+
+  firebase.auth().onAuthStateChanged(user => {
+    if (!user) {
+      window.location.href = "/templates/login.html";
+    } else {
+      nomeUsuario = user.displayName || "Usuário sem nome";
+
+      // Exibir no header
+      const header = document.getElementById("header");
+      const saudacao = document.createElement("p");
+      saudacao.textContent = `Olá, ${nomeUsuario}`;
+      saudacao.style.color = "#000";
+      saudacao.style.fontWeight = "bold";
+      saudacao.style.marginTop = "15px";
+      header.appendChild(saudacao);
+    }
+  });
+
+  const sugestoes = [
+    "🌴 Descubra o Engenho Mucuripe!",
+    "⛪ Visite a bela Igreja Matriz de N. Sra. da Conceição!",
+    "🎭 Explore o Centro Cultural de Ceará-Mirim!"
+  ];
+
+  let index = 0;
+  function trocarSugestao() {
+    index = (index + 1) % sugestoes.length;
+    document.getElementById('sugestaoTexto').textContent = sugestoes[index];
+  }
+  setInterval(trocarSugestao, 8000);
+
+  function enviarMensagem() {
+    const texto = document.getElementById('userInput').value.trim();
+    if (!texto) return alert("Por favor, digite uma mensagem.");
+
+    db.collection("mensagens").add({
+      nome: nomeUsuario,
+      mensagem: texto,
+      curtidas: 0,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    }).then(() => {
+      document.getElementById('userInput').value = '';
+    }).catch(erro => {
+      alert("Erro ao enviar: " + erro.message);
+    });
+  }
+
+  function curtir(idMensagem) {
+    db.collection("mensagens").doc(idMensagem).update({
+      curtidas: firebase.firestore.FieldValue.increment(1)
+    });
+  }
+
+  function mostrarCampoComentario(id) {
+    const campo = document.getElementById(`campo-comentario-${id}`);
+    campo.style.display = campo.style.display === "none" ? "block" : "none";
+  }
+
+  function comentar(idMensagem) {
+    const input = document.getElementById(`resposta-${idMensagem}`);
+    const texto = input.value.trim();
+    if (!texto) return;
+
+    db.collection("mensagens").doc(idMensagem).collection("respostas").add({
+      texto,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    }).then(() => {
+      input.value = "";
+    });
+  }
+
+  function editarComentario(idMsg, idResp, textoAtual) {
+    const novoTexto = prompt("Editar comentário:", textoAtual);
+    if (novoTexto && novoTexto !== textoAtual) {
+      db.collection("mensagens")
+        .doc(idMsg)
+        .collection("respostas")
+        .doc(idResp)
+        .update({ texto: novoTexto });
+    }
+  }
+
+  function deletarComentario(idMsg, idResp) {
+    if (confirm("Deseja excluir este comentário?")) {
+      db.collection("mensagens")
+        .doc(idMsg)
+        .collection("respostas")
+        .doc(idResp)
+        .delete();
+    }
+  }
+
+  db.collection("mensagens").orderBy("timestamp", "desc").onSnapshot(snapshot => {
+    const chatBox = document.getElementById("chatBox");
+    chatBox.innerHTML = "";
+    snapshot.forEach(doc => {
+      const dados = doc.data();
+      const data = dados.timestamp?.toDate().toLocaleDateString() || "data desconhecida";
+      const hora = dados.timestamp?.toDate().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) || "";
+
+      const div = document.createElement("div");
+      div.className = "mensagem";
+      div.innerHTML = `
+        <strong>${dados.nome}</strong><br>
+        <span>${dados.mensagem}</span><br>
+        <small>${data} às ${hora}</small><br>
+        <i class="fa-solid fa-heart" style="cursor: pointer; color: red;" onclick="curtir('${doc.id}')"></i>
+        <span id="curtidas-${doc.id}">${dados.curtidas || 0}</span>
+        &nbsp;&nbsp;
+        <i class="fa-solid fa-comment" style="cursor: pointer;" onclick="mostrarCampoComentario('${doc.id}')"></i>
+        <div id="campo-comentario-${doc.id}" style="display: none; margin-top: 5px;">
+          <input type="text" id="resposta-${doc.id}" placeholder="Escreva um comentário">
+          <i class="fa-solid fa-paper-plane" style="cursor: pointer;" onclick="comentar('${doc.id}')"></i>
         </div>
+        <div id="comentarios-${doc.id}" style="margin-top: 5px;"></div>
+      `;
+      chatBox.appendChild(div);
 
-        <a href="/PulsoCM/static/templates/login.html"><button>Login</button></a>
-  </header>
-  
-  <div class="chat-container">
-    <div class="side-image">
-      <p class="sugestao" id="sugestaoTexto"> Descubra a história da nossa Biblioteca</p>
-    </div>
-
-    <div class="chat-box" id="chatBox">
-      <!-- Mensagens aparecem aqui -->
-    </div>
-
-    <div class="input-container">
-      <input type="text" id="userName" placeholder="Seu nome" required />
-      <input type="text" id="userInput" placeholder="Compartilhe sua experiência ou dica!" required />
-      <button onclick="enviarMensagem()">Enviar</button>
-    </div>
-  </div>
-
-  <script>
-    // Firebase Configuração
-    const firebaseConfig = {
-      apiKey: "AIzaSyCMCR42h8ZM4ao4D5MSTZkg99PIhspSAZE",
-      authDomain: "pulso-da-historia.firebaseapp.com",
-      databaseURL: "https://pulso-da-historia-default-rtdb.firebaseio.com",
-      projectId: "pulso-da-historia",
-      storageBucket: "pulso-da-historia.appspot.com",
-      messagingSenderId: "285634655113",
-      appId: "1:285634655113:web:7e97210e9c6b2878d96758"
-    };
-
-    // Inicializar Firebase
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
-  </script>
-
-  <script>
-    const sugestoes = [
-      "🌴 Descubra o Engenho Mucuripe!",
-      "⛪ Visite a bela Igreja Matriz de N. Sra. da Conceição!",
-      "🎭 Explore o Centro Cultural de Ceará-Mirim!"
-    ];
-  
-    let index = 0;
-    function trocarSugestao() {
-      index = (index + 1) % sugestoes.length;
-      document.getElementById('sugestaoTexto').textContent = sugestoes[index];
-    }
-    setInterval(trocarSugestao, 8000);
-  
-    function enviarMensagem() {
-      const nome = document.getElementById('userName').value.trim();
-      const texto = document.getElementById('userInput').value.trim();
-      if (!nome || !texto) return alert("Por favor, preencha todos os campos.");
-  
-      db.collection("mensagens").add({
-        nome,
-        mensagem: texto,
-        curtidas: 0,
-        timestamp: firebase.firestore.FieldValue.serverTimestamp()
-      }).then(() => {
-        document.getElementById('userInput').value = '';
-      }).catch(erro => {
-        alert("Erro ao enviar: " + erro.message);
-      });
-    }
-  
-    function curtir(idMensagem) {
-      const mensagemRef = db.collection("mensagens").doc(idMensagem);
-      mensagemRef.update({
-        curtidas: firebase.firestore.FieldValue.increment(1)
-      });
-    }
-  
-    function mostrarCampoComentario(idMensagem) {
-      const campo = document.getElementById(`campo-comentario-${idMensagem}`);
-      campo.style.display = campo.style.display === 'none' ? 'block' : 'none';
-    }
-  
-    function comentar(idMensagem) {
-      const input = document.getElementById(`resposta-${idMensagem}`);
-      const texto = input.value.trim();
-      if (!texto) return;
-  
-      db.collection("mensagens").doc(idMensagem).collection("respostas").add({
-        texto,
-        timestamp: firebase.firestore.FieldValue.serverTimestamp()
-      }).then(() => {
-        input.value = '';
-      });
-    }
-  
-    function editarComentario(idMensagem, idResposta, textoAtual) {
-      const novoTexto = prompt("Editar comentário:", textoAtual);
-      if (novoTexto && novoTexto !== textoAtual) {
-        db.collection("mensagens")
-          .doc(idMensagem)
-          .collection("respostas")
-          .doc(idResposta)
-          .update({
-            texto: novoTexto
-          });
-      }
-    }
-  
-    function deletarComentario(idMensagem, idResposta) {
-      if (confirm("Tem certeza que deseja deletar este comentário?")) {
-        db.collection("mensagens")
-          .doc(idMensagem)
-          .collection("respostas")
-          .doc(idResposta)
-          .delete();
-      }
-    }
-  
-    db.collection("mensagens").orderBy("timestamp", "desc")
-      .onSnapshot(snapshot => {
-        const chatBox = document.getElementById("chatBox");
-        chatBox.innerHTML = "";
-        snapshot.forEach(doc => {
-          const dados = doc.data();
-          const data = dados.timestamp?.toDate().toLocaleDateString() || "data desconhecida";
-          const hora = dados.timestamp?.toDate().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) || "";
-  
-          const mensagemDiv = document.createElement('div');
-          mensagemDiv.className = 'mensagem';
-          mensagemDiv.innerHTML = `
-            <strong>${dados.nome}</strong><br>
-            <span>${dados.mensagem}</span><br>
-            <small>${data} às ${hora}</small><br>
-            <i class="fa-solid fa-heart" style="cursor: pointer; color: red;" onclick="curtir('${doc.id}')"></i>
-            <span id="curtidas-${doc.id}">${dados.curtidas || 0}</span>
-            &nbsp;&nbsp;
-            <i class="fa-solid fa-comment" style="cursor: pointer;" onclick="mostrarCampoComentario('${doc.id}')"></i>
-            <div id="campo-comentario-${doc.id}" style="display: none; margin-top: 5px;">
-              <input type="text" id="resposta-${doc.id}" placeholder="Escreva um comentário">
-              <i class="fa-solid fa-paper-plane" style="cursor: pointer;" onclick="comentar('${doc.id}')"></i>
-            </div>
-            <div id="comentarios-${doc.id}" style="margin-top: 5px;"></div>
+      const comentariosDiv = document.getElementById(`comentarios-${doc.id}`);
+      db.collection("mensagens").doc(doc.id).collection("respostas").orderBy("timestamp", "asc").onSnapshot(resps => {
+        comentariosDiv.innerHTML = "";
+        resps.forEach(resp => {
+          const d = resp.data();
+          const dt = d.timestamp?.toDate().toLocaleString() || "";
+          const p = document.createElement("p");
+          p.innerHTML = `
+            ↳ ${d.texto} <br><small>${dt}</small>
+            &nbsp; <i class="fa-solid fa-pen" onclick="editarComentario('${doc.id}', '${resp.id}', '${d.texto.replace(/'/g, "\\'")}')" title="Editar"></i>
+            &nbsp; <i class="fa-solid fa-trash" onclick="deletarComentario('${doc.id}', '${resp.id}')" title="Excluir"></i>
           `;
-          chatBox.appendChild(mensagemDiv);
-  
-          const comentariosDiv = document.getElementById(`comentarios-${doc.id}`);
-          db.collection("mensagens").doc(doc.id).collection("respostas").orderBy("timestamp", "asc")
-            .onSnapshot(respostasSnap => {
-              comentariosDiv.innerHTML = "";
-              respostasSnap.forEach(resposta => {
-                const dado = resposta.data();
-                const dataResposta = dado.timestamp?.toDate().toLocaleString() || "";
-                const p = document.createElement('p');
-                p.innerHTML = `
-                  ↳ ${dado.texto} <br><small>${dataResposta}</small>
-                  &nbsp; <i class="fa-solid fa-pen" style="cursor: pointer;" title="Editar" onclick="editarComentario('${doc.id}', '${resposta.id}', '${dado.texto.replace(/'/g, "\\'")}')"></i>
-                  &nbsp; <i class="fa-solid fa-trash" style="cursor: pointer;" title="Excluir" onclick="deletarComentario('${doc.id}', '${resposta.id}')"></i>
-                `;
-                comentariosDiv.appendChild(p);
-              });
-            });
+          comentariosDiv.appendChild(p);
         });
       });
-  </script>
+    });
+  });
+</script>
 
-  <footer>
+    <footer>
         <div class="content">
             <div class="a cta">
                 <h2 id="frase-cta">Se aventure conosco!</h2>
@@ -240,22 +243,22 @@
 
             <div class="a links">
                 <a href="https://cearamirim.rn.gov.br/" target="_blank">
-                    <img src="/PulsoCM/static/img/brasaoCM.svg">
+                    <img src="/static/img/brasaoCM.svg">
                     <p>Prefeitura <br> Municipal</p>
                 </a>
 
                 <a href="https://www.facebook.com/people/ACLA-Pedro-Sim%C3%B5es-Neto/100064889582779/" target="_blank">
-                    <img src="/PulsoCM/static/img/ACLA.png">
+                    <img src="/static/img/ACLA.png">
                     <p>ACLA</p>
                 </a>
 
                 <a href="https://www.cearamirim.rn.leg.br/" target="_blank">
-                    <img src="/PulsoCM/static/img/camara.png">
+                    <img src="/static/img/camara.png">
                     <p>Câmara Municipal</p>
                 </a>
 
                 <a href="https://gibsonmachadocm.blogspot.com/" target="_blank">
-                    <img src="/PulsoCM/static/img/blogger.png">
+                    <img src="/static/img/blogger.png">
                     <p>Ceará-Mirim <br> Cultura e Arte</p>
                 </a> 
             </div>
@@ -265,7 +268,7 @@
 
                 <ul>
                     <li>
-                        <a href="/PulsoCM/static/templates/politica.html">
+                        <a href="templates/politica.html">
                             Políticas e Termos
                         </a>
                     </li>
@@ -276,7 +279,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/PulsoCM/static/templates/about.html">
+                        <a href="/templates/about.html">
                             Sobre Nós
                         </a>
                     </li>
@@ -289,14 +292,9 @@
                 &copy 2025 Pulso da História CM - Todos os direitos reservados.
             </span>
         </div>
-  </footer>
+    </footer>
 
-  <!-- Botão Voltar ao  Topo-->
-  <!--<button id="btnTopo" onclick="voltarAoTopo()"><i class="fa-solid fa-arrow-up"></i></button>-->
-
-  <!--SCRIPTS-->
-  <script src="/PulsoCM/static/javascript/headerColorido.js"></script>
-  <script src="/PulsoCM/static/javascript/burguer.js"></script>
-  <!--<script src="/PulsoCM/static/javascript/voltar.js"></script>-->
+    <script src="/static/javascript/headerColorido.js"></script>
+    <script src="/static/javascript/burguer.js"></script>
 </body>
 </html>
