@@ -1,0 +1,134 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fonte base */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 10px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    background-color: #0f4c81;
+    color: #fff;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Sections */
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    color: #0f4c81;
+    margin-bottom: 10px;
+}
+
+h3 {
+    margin-top: 15px;
+    color: #333;
+}
+
+/* Desenvolvedoras */
+/* Foto das três juntas (menor) */
+.developers .team-photo img {
+    width: 90%;
+    max-width: 400px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+/* Cards individuais redondos */
+.dev-photos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.dev-card {
+    text-align: center;
+    max-width: 150px;
+}
+
+.dev-card img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%;
+    /* Foto redonda */
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #0f4c81;
+    color: white;
+    margin-top: 40px;
+}
+
+/* ====================
+     RESPONSIVO - MOBILE
+     ==================== */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .dev-photos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dev-card {
+        max-width: 80%;
+    }
+
+    .developers .team-photo img {
+        max-width: 300px;
+    }
+}
+
+/* ====================
+     RESPONSIVO - LAPTOP
+     ==================== */
+@media (min-width: 1024px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding: 40px;
+    }
+
+    .dev-photos {
+        justify-content: space-evenly;
+    }
+}
